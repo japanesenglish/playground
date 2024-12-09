@@ -147,7 +147,7 @@ function rat(b,a){
     if( b !== '' && a !== ''){
         var num1 = new Decimal(a);
         var num2 = new Decimal(b);
-        last = num1.div(num2);
+        last = num2.div(num1);
         var rate = last.toNumber();
         if(rate >= 1000){
             if(Number.isInteger(rate)){
