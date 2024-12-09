@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>単位変換</title>
+      <link rel="icon" href="../icon.jpg">
+      <link rel="apple-touch-icon" sizes="192x192" href="../icon.jpg">
+      <link rel="stylesheet" type="text/css" href="../index.css" />
+      <link rel="stylesheet" type="text/css" href="convert.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/9.0.0/decimal.min.js"></script>
+   </head>
+   <body>
+      <div id="home"><a href="../index.html">HOME</a></div>
+      <div id="op">≡</div>
+      <iframe id="li" src="../list.html"></iframe>
+
+      <h2>単位変換</h2>
+      <input type="number"><span id="bfc">単位：下から選択</span><span id="brat"></span>
+      <div>⇩<span id="rate"></span></div>
+      <div><span id="result"></span><span id="afc">単位：下から選択</span><span id="arat"></span></div>
+      <div>
+         <div id="lon">
+            <div class="top">長さ</div>
+            <div id="belo" class="before">
+               変換前
+               <div>
+                  <span>nm</span>
+                  <span>μm</span>
+                  <span>mm</span>
+                  <span>cm</span>
+                  <span>m</span>
+                  <span>km</span>
+               </div>
+               <div>
+                  <span>厘</span>
+                  <span>分</span>
+                  <span>寸</span>
+                  <span>尺</span>
+                  <span>間</span>
+                  <span>丈</span>
+                  <span>町</span>
+                  <span>里</span>
+               </div>
+               <div>
+                  <span>インチ</span>
+                  <span>フィート</span>
+                  <span>ヤード</span>
+                  <span>チェーン</span>
+                  <span>ハロン</span>
+                  <span>マイル</span>
+               </div>
+               <div>
+                  <span>光秒</span>
+                  <span>光分</span>
+                  <span>光時</span>
+                  <span>光日</span>
+                  <span>光年</span>
+               </div>
+            </div>
+            <div id="aflo" class="after">
+               変換後
+               <div>
+                  <span>nm</span>
+                  <span>μm</span>
+                  <span>mm</span>
+                  <span>cm</span>
+                  <span>m</span>
+                  <span>km</span>
+               </div>
+               <div>
+                  <span>厘</span>
+                  <span>分</span>
+                  <span>寸</span>
+                  <span>尺</span>
+                  <span>間</span>
+                  <span>里</span>
+               </div>
+               <div>
+                  <span>インチ</span>
+                  <span>フィート</span>
+                  <span>ヤード</span>
+                  <span>チェーン</span>
+                  <span>ハロン</span>
+                  <span>マイル</span>
+               </div>
+               <div>
+                  <span>光秒</span>
+                  <span>光分</span>
+                  <span>光時</span>
+                  <span>光年</span>
+               </div>
+            </div>
+         </div>
+         <div id="hev">
+            <div class="top">重さ</div>
+            <div id="behe" class="before">
+               変換前<br>
+               <span>g</span>
+               <span>kg</span>
+            </div>
+            <div id="afhe" class="after">
+               変換後<br>
+               <span>kg</span>
+            </div>
+         </div>
+         <div class="emp lonn"></div><div class="emp hevv"></div>
+      </div>
+
+      <script src="../index.js"></script>
+      <script src="convert.js"></script>
+   </body>
+</html>

@@ -1,0 +1,88 @@
+@charset "utf-8";
+/*入力欄*/
+input{
+    width: 200px;
+    margin-right: 7px;
+    text-align: right;
+}
+/*結果*/
+#result{
+    display: inline-block;
+    height: auto;
+    min-height: 20px;
+    width: auto;
+    margin: 0px 6px 0px 0px;
+    border: black solid 2px;
+    background-color: white;
+    text-align: right;
+    overflow: auto;
+}
+
+div:has(#result){
+    padding: 4px 0px 10px 0px;
+}
+/*単位選択欄*/
+div:has(#lon){
+    position: relative;
+}
+#lon,#hev{
+    &>div{
+        width: 400px;
+        background-color: white;
+        border: black solid 1px;
+    }
+    & .top{
+        position: relative;
+        width: 50px;
+        border-bottom: white solid 1px;
+        border-radius: 5px 5px 0px 0px;
+        text-align: center;
+        &::after{
+            position: absolute;
+            content: '';
+            bottom: -5px;
+            left: 0px;
+            height: 7px;
+            width: 50px;
+            background-color: white;
+        }
+    }
+}
+/*各単位群*/
+#lon{
+    position: absolute;
+    z-index: 1;
+}
+#hev{
+    position: absolute;
+    top: 0px;
+    & .top{
+        margin-left: 51px;
+    }
+}
+.lonn{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    height: 25px;
+    width: 50px;
+    z-index: calc(infinity);
+}
+.hevv{
+    position: absolute;
+    top: 1px;
+    left: 52px;
+    height: 25px;
+    width: 50px;
+    z-index: calc(infinity);
+}
+/*単位*/
+.before>div,.after>div{
+    padding: 5px 0px;
+}
+.before span,.after span{
+    padding: 0px 10px;
+}
+.before br,.after br{
+    padding: 5px 0px;
+}
