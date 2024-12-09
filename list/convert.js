@@ -157,7 +157,7 @@ function rat(b,a){
                 rate = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
             }
         }
-        document.getElementById('rate').innerHTML = rate + '倍';
+        document.getElementById('rate').innerHTML = '(×'　+ rate + ')';
     };
 };
 //計算
