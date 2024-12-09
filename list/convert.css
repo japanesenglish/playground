@@ -67,7 +67,7 @@ div:has(#lon){
     left: 1px;
     height: 25px;
     width: 50px;
-    z-index: calc(infinity);
+    z-index: calc(2147483646);
 }
 .hevv{
     position: absolute;
@@ -75,7 +75,7 @@ div:has(#lon){
     left: 52px;
     height: 25px;
     width: 50px;
-    z-index: calc(infinity);
+    z-index: calc(2147483646);
 }
 /*単位*/
 .before>div,.after>div{
