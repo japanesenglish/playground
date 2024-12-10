@@ -4,7 +4,7 @@
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title>単位変換</title>
+      <title>単位変換（作成中）</title>
       <link rel="icon" href="../icon.jpg">
       <link rel="apple-touch-icon" sizes="192x192" href="../icon.jpg">
       <link rel="stylesheet" type="text/css" href="../index.css" />
@@ -17,95 +17,198 @@
       <iframe id="li" src="../list.html"></iframe>
 
       <h2>単位変換</h2>
-      <input type="number"><span id="bfc">単位：下から選択</span><span id="brat"></span>
+      <input type="number"><span id="bfc">単位：下から選択</span>
       <div>⇩<span id="rate"></span></div>
-      <div><span id="result"></span><span id="afc">単位：下から選択</span><span id="arat"></span></div>
-      <div>
-         <div id="lon">
-            <div class="top">長さ</div>
-            <div id="belo" class="before">
-               変換前
+      <div><span id="result"></span><span id="afc">単位：下から選択</span></div>
+      <div id="box">
+         <div id="topbox">
+            <div class="top aaa"><div>長さ</div></div>
+            <div class="top bbb"><div>重さ</div></div>
+            <div class="top ccc"><div>面積</div></div>
+         </div>
+         <div id="aaabox">
+            <div id="aaabef" class="before">
                <div>
-                  <span>nm</span>
-                  <span>μm</span>
-                  <span>mm</span>
-                  <span>cm</span>
-                  <span>m</span>
-                  <span>km</span>
-               </div>
-               <div>
-                  <span>厘</span>
-                  <span>分</span>
-                  <span>寸</span>
-                  <span>尺</span>
-                  <span>間</span>
-                  <span>丈</span>
-                  <span>町</span>
-                  <span>里</span>
-               </div>
-               <div>
-                  <span>インチ</span>
-                  <span>フィート</span>
-                  <span>ヤード</span>
-                  <span>チェーン</span>
-                  <span>ハロン</span>
-                  <span>マイル</span>
-               </div>
-               <div>
-                  <span>光秒</span>
-                  <span>光分</span>
-                  <span>光時</span>
-                  <span>光日</span>
-                  <span>光年</span>
+               <span>nm</span>
+               <span>μm</span>
+               <span>mm</span>
+               <span>cm</span>
+               <span>m</span>
+               <span>km</span>
+               </div><div>
+               <span>厘</span>
+               <span>分</span>
+               <span>寸</span>
+               <span>尺</span>
+               <span>間</span>
+               <span>丈</span>
+               <span>町</span>
+               <span>里</span>
+               </div><div>
+               <span>インチ</span>
+               <span>フィート</span>
+               <span>ヤード</span>
+               <span>チェーン</span>
+               <span>ハロン</span>
+               <span>マイル</span>
+               </div><div>
+               <span>光秒</span>
+               <span>光分</span>
+               <span>光時</span>
+               <span>光日</span>
+               <span>光年</span>
                </div>
             </div>
-            <div id="aflo" class="after">
-               変換後
+            <div id="aaaaft" class="after">
                <div>
-                  <span>nm</span>
-                  <span>μm</span>
-                  <span>mm</span>
-                  <span>cm</span>
-                  <span>m</span>
-                  <span>km</span>
-               </div>
-               <div>
-                  <span>厘</span>
-                  <span>分</span>
-                  <span>寸</span>
-                  <span>尺</span>
-                  <span>間</span>
-                  <span>里</span>
-               </div>
-               <div>
-                  <span>インチ</span>
-                  <span>フィート</span>
-                  <span>ヤード</span>
-                  <span>チェーン</span>
-                  <span>ハロン</span>
-                  <span>マイル</span>
-               </div>
-               <div>
-                  <span>光秒</span>
-                  <span>光分</span>
-                  <span>光時</span>
-                  <span>光年</span>
+               <span>nm</span>
+               <span>μm</span>
+               <span>mm</span>
+               <span>cm</span>
+               <span>m</span>
+               <span>km</span>
+               </div><div>
+               <span>厘</span>
+               <span>分</span>
+               <span>寸</span>
+               <span>尺</span>
+               <span>間</span>
+               <span>丈</span>
+               <span>町</span>
+               <span>里</span>
+               </div><div>
+               <span>インチ</span>
+               <span>フィート</span>
+               <span>ヤード</span>
+               <span>チェーン</span>
+               <span>ハロン</span>
+               <span>マイル</span>
+               </div><div>
+               <span>光秒</span>
+               <span>光分</span>
+               <span>光時</span>
+               <span>光年</span>
                </div>
             </div>
          </div>
-         <div id="hev">
-            <div class="top">重さ</div>
-            <div id="behe" class="before">
-               変換前<br>
+         <div id="bbbbox">
+            <div id="bbbbef" class="before">
+               <div>
+               <span>ng</span>
+               <span>μg</span>
+               <span>mg</span>
                <span>g</span>
                <span>kg</span>
+               <span>t</span>
+               </div><div>
+               <span>厘</span>
+               <span>分</span>
+               <span>匁</span>
+               <span>斤</span>
+               <span>貫</span>
+               </div><div>
+               <span>グレーン</span>
+               <span>ドラム</span>
+               <span>オンス</span>
+               <span>ポンド</span>
+               <span>ストーン</span>
+               </div><div>
+               <span>カラット</span>
+               </div>
             </div>
-            <div id="afhe" class="after">
-               変換後<br>
+            <div id="bbbaft" class="after">
+               <div>
+               <span>ng</span>
+               <span>μg</span>
+               <span>mg</span>
+               <span>g</span>
                <span>kg</span>
+               <span>t</span>
+               </div><div>
+               <span>厘</span>
+               <span>分</span>
+               <span>匁</span>
+               <span>斤</span>
+               <span>貫</span>
+               </div><div>
+               <span>グレーン</span>
+               <span>ドラム</span>
+               <span>オンス</span>
+               <span>ポンド</span>
+               <span>ストーン</span>
+               </div><div>
+               <span>カラット</span>
+               </div>
             </div>
          </div>
-         <div class="emp lonn"></div><div class="emp hevv"></div>
+         <div id="cccbox">
+            <div id="cccbef" class="before">
+               <div>
+                  <span>n㎡</span>
+                  <span>μ㎡</span>
+                  <span>m㎡</span>
+                  <span>c㎡</span>
+                  <span>㎡</span>
+                  <span>a</span>
+                  <span>ha</span>
+                  <span>k㎡</span>
+               </div>
+               <div>
+                  <span>方寸</span>
+                  <span>方尺</span>
+                  <span>坪(歩)</span>
+                  <span>方丈</span>
+                  <span>畝</span>
+                  <span>反(段)</span>
+                  <span>町</span>
+               </div>
+               <div>
+                  <span>平方フィート</span>
+                  <span>平方ヤード</span>
+                  <span>ルード</span>
+                  <span>エーカー</span>
+                  <span>平方マイル</span>
+               </div>
+               <div>
+                  <span>東京ドーム</span>
+                  <span>日本</span>
+                  <span>世界</span>
+               </div>
+            </div>
+            <div id="cccaft" class="after">
+               <div>
+                  <span>n㎡</span>
+                  <span>μ㎡</span>
+                  <span>m㎡</span>
+                  <span>c㎡</span>
+                  <span>㎡</span>
+                  <span>a</span>
+                  <span>ha</span>
+                  <span>k㎡</span>
+               </div>
+               <div>
+                  <span>方寸</span>
+                  <span>方尺</span>
+                  <span>坪(歩)</span>
+                  <span>方丈</span>
+                  <span>畝</span>
+                  <span>反(段)</span>
+                  <span>町</span>
+               </div>
+               <div>
+                  <span>平方フィート</span>
+                  <span>平方ヤード</span>
+                  <span>ルード</span>
+                  <span>エーカー</span>
+                  <span>平方マイル</span>
+               </div>
+               <div>
+                  <span>東京ドーム</span>
+                  <span>日本</span>
+                  <span>世界</span>
+               </div>
+            </div>
+         </div>
       </div>
 
       <script src="../index.js"></script>

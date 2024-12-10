@@ -1,24 +1,75 @@
 //単位群の選択
-let tops = document.querySelectorAll('.emp');
+let tops = document.querySelectorAll('.top');
 let z = 1;
+var now = 0;
 tops.forEach(function(car){
     car.addEventListener('click',function(){
         z = z + 1;
-        if(car.classList.contains('lonn')){
-            let aa = document.getElementById('lon');
-            aa.style.zIndex = z;
-        } else if (car.classList.contains('hevv')){
-            let aa = document.getElementById('hev');
-            aa.style.zIndex = z;
+        if(car.classList.contains('aaa')){
+            now = 0;
+            document.getElementById('aaabox').style.zIndex = z;
+            document.getElementById('aaabox').style.display = 'block';
+            document.getElementById('bbbbox').style.display = 'none';
+            document.getElementById('cccbox').style.display = 'none';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.aaa').style.background = '#c4c4c4';
+            document.querySelector('.top.bbb').style.background = 'white';
+            document.querySelector('.top.ccc').style.background = 'white';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.aaa').style.top = '0';
+            document.querySelector('.top.bbb').style.top = '-5px';
+            document.querySelector('.top.ccc').style.top = '-5px';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        } else if (car.classList.contains('bbb')){
+            now = 1;
+            document.getElementById('bbbbox').style.zIndex = z;
+            document.getElementById('bbbbox').style.display = 'block';
+            document.getElementById('aaabox').style.display = 'none';
+            document.getElementById('cccbox').style.display = 'none';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.bbb').style.background = '#c4c4c4';
+            document.querySelector('.top.aaa').style.background = 'white';
+            document.querySelector('.top.ccc').style.background = 'white';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.bbb').style.top = '0';
+            document.querySelector('.top.aaa').style.top = '-5px';
+            document.querySelector('.top.ccc').style.top = '-5px';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        } else if (car.classList.contains('ccc')){
+            now = 2;
+            document.getElementById('cccbox').style.zIndex = z;
+            document.getElementById('cccbox').style.display = 'block';
+            document.getElementById('aaabox').style.display = 'none';
+            document.getElementById('bbbbox').style.display = 'none';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.ccc').style.background = '#c4c4c4';
+            document.querySelector('.top.aaa').style.background = 'white';
+            document.querySelector('.top.bbb').style.background = 'white';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.ccc').style.top = '0';
+            document.querySelector('.top.aaa').style.top = '-5px';
+            document.querySelector('.top.bbb').style.top = '-5px';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         }
+        //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        document.getElementById('bfc').innerHTML = '単位：下から選択';
+        document.getElementById('afc').innerHTML = '単位：下から選択';
+        document.getElementById('rate').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        last = '';
+        brate = '';
+        arate = '';
     })
 })
 
 //各単位の基準単位に対する割合
 var num1 = '';
 var num2 = '';
+var num3 = '';
 function list(un){
     let abrate = ''
+    //長さ
+    if(now = 0){
         if(un == 'nm'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μm'){
@@ -86,74 +137,181 @@ function list(un){
         } else if (un == '光年'){
             abrate = new Decimal('9460730472580800');
         }
-        return abrate;
+    }
+    //重さ
+    if(now = 1){
+        if(un == 'ng'){
+            abrate = new Decimal('0.000000001');
+        } else if (un == 'μg'){
+            abrate = new Decimal('0.000001');
+        } else if (un == 'mg'){
+            abrate = new Decimal('0.001');
+        } else if (un == 'g'){
+            abrate = new Decimal('1');
+        } else if (un == 'kg'){
+            abrate = new Decimal('1000');
+        } else if (un == 't'){
+            abrate = new Decimal('1000000');
+        } else if (un == '厘'){
+            abrate = new Decimal('0.0375');
+        } else if (un == '分'){
+            abrate = new Decimal('0.375');
+        } else if (un == '匁'){
+            abrate = new Decimal('3.75');
+        } else if (un == '斤'){
+            abrate = new Decimal('600');
+        } else if (un == '貫'){
+            abrate = new Decimal('3750');
+        } else if (un == 'グレーン'){
+            abrate = new Decimal('0.06479891');
+        } else if (un == 'ドラム'){
+            abrate = new Decimal('1.7718451953125');
+        } else if (un == 'オンス'){
+            abrate = new Decimal('28.349523125');
+        } else if (un == 'ポンド'){
+            abrate = new Decimal('453.59237');
+        } else if (un == 'ストーン'){
+            abrate = new Decimal('6,350.29318');
+        } else if (un == 'カラット'){
+            abrate = new Decimal('0.2');
+        }
+    }
+    //面積
+    if(now = 2){
+        if(un == 'n㎡'){
+            abrate = new Decimal('0.000000000000000001');
+        } else if (un == 'μ㎡'){
+            abrate = new Decimal('0.000000000001');
+        } else if (un == 'm㎡'){
+            abrate = new Decimal('0.000001');
+        } else if (un == 'c㎡'){
+            abrate = new Decimal('0.0001');
+        } else if (un == '㎡'){
+            abrate = new Decimal('1');
+        } else if (un == 'a'){
+            abrate = new Decimal('100');
+        } else if (un == 'ha'){
+            abrate = new Decimal('10000');
+        } else if (un == 'k㎡'){
+            abrate = new Decimal('1000000');
+        } else if (un == '方寸'){
+            num1 = new Decimal('1');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            abrate = num3.mul(num3);
+        } else if (un == '方尺'){
+            num1 = new Decimal('10');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            abrate = num3.mul(num3);
+        } else if (un == '坪(歩)'){
+            num1 = new Decimal('60');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            abrate = num3.mul(num3);
+        } else if (un == '方丈'){
+            num1 = new Decimal('100');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            abrate = num3.mul(num3);
+        } else if (un == '畝'){
+            num1 = new Decimal('60');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            num1 = new Decimal('30');
+            abrate = num3.mul(num3).mul(num1);
+        } else if (un == '反(段)'){
+            num1 = new Decimal('60');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            num1 = new Decimal('300');
+            abrate = num3.mul(num3).mul(num1);
+        } else if (un == '町'){
+            num1 = new Decimal('60');
+            num2 = new Decimal('33');
+            num3 = num1.div(num2);
+            num1 = new Decimal('3000');
+            abrate = num3.mul(num3).mul(num1);
+        } else if (un == '平方フィート'){
+            abrate = new Decimal('0.09290304');
+        } else if (un == '平方ヤード'){
+            abrate = new Decimal('0.83612736');
+        } else if (un == 'ルード'){
+            abrate = new Decimal('1011.7141056');
+        } else if (un == 'エーカー'){
+            abrate = new Decimal('4046.8564224');
+        } else if (un == '平方マイル'){
+            abrate = new Decimal('2589988.110336');
+        } else if (un == '東京ドーム'){
+            abrate = new Decimal('46755');
+        } else if (un == '日本'){
+            abrate = new Decimal('377974790000');
+        } else if (un == '世界'){
+            abrate = new Decimal('130094010000000');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        } else if (un == ''){
+            abrate = new Decimal('');
+        }
+    }
+    return abrate;
+    //要追加、折り畳みは「範囲選択後 ctrl+K→, 」ーーーーーーーーーーーーーーーーーーーーーーー//
 }
 //変換前の選択
-let bl = document.querySelector('#belo');
-let bu1 = bl.querySelectorAll('span');
-let bh = document.querySelector('#behe');
-let bu2 = bh.querySelectorAll('span');
-let bunions = [...bu1,...bu2]
-var brnum = '';
+let bu1 = document.querySelectorAll('#aaabef span');
+let bu2 = document.querySelectorAll('#bbbbef span');
+let bu3 = document.querySelectorAll('#cccbef span');
+//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let bunions = [...bu1,...bu2,...bu3]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+var brate = '';
 bunions.forEach(function(car){
     car.addEventListener('click',function(){
         let un = car.innerText; 
         document.getElementById('bfc').innerHTML = un;
-        var brate = list(un);
-        brnum = brate;
-        rat(brnum,arnum);
-        ooo();
-        brate = brate.toNumber();
-        if(brate >= 1000){
-            if(Number.isInteger(brate)){
-                brate = brate.toLocaleString();
-            } else {
-                var numbers = String(brate).split('.');
-                brate = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
-            }
-        }
-        document.getElementById('brate').innerHTML = brate + 'm';
+        brate = list(un);
+        rat(brate,arate);
+        ans();
     });
 });
 //変換後の選択
-let al = document.querySelector('#aflo');
-let au1 = al.querySelectorAll('span');
-let ah = document.querySelector('#afhe');
-let au2 = ah.querySelectorAll('span');
-let aunions = [...au1,...au2]
-var arnum = '';
+let au1 = document.querySelectorAll('#aaaaft span');
+let au2 = document.querySelectorAll('#bbbaft span');
+let au3 = document.querySelectorAll('#cccaft span');
+//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let aunions = [...au1,...au2,...au3]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+var arate = '';
 aunions.forEach(function(car){
     car.addEventListener('click',function(){
         let un = car.innerText; 
         document.getElementById('afc').innerHTML = un;
-        var arate = list(un);
-        arnum = arate;
-        rat(brnum,arnum);
-        ooo();
-        arate = arate.toNumber();
-        if(arate >= 1000){
-            if(Number.isInteger(arate)){
-                arate = arate.toLocaleString();
-            } else {
-                var numbers = String(arate).split('.');
-                arate = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
-            }
-        }
-        document.getElementById('arate').innerHTML = arate + 'm';
+        arate = list(un);
+        rat(brate,arate);
+        ans();
     })
 })
 //倍率計算
+let numbers = [];
 function rat(b,a){
     if( b !== '' && a !== ''){
-        var num1 = new Decimal(a);
-        var num2 = new Decimal(b);
+        num1 = new Decimal(a);
+        num2 = new Decimal(b);
         last = num2.div(num1);
         var rate = last.toNumber();
         if(rate >= 1000){
             if(Number.isInteger(rate)){
                 rate = rate.toLocaleString();
             } else {
-                var numbers = String(rate).split('.');
+                numbers = String(rate).split('.');
                 rate = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
             }
         }
@@ -161,19 +319,18 @@ function rat(b,a){
     };
 };
 //計算
-var last = ''
+var last = '';
 let inp = document.querySelector('input');
 let result = document.getElementById('result');
-function ooo(){
+function ans(){
     if(last !== ''){
         if(inp.value !== ''){
-            console.log(last)
-            let res = last.mul(inp.value).toNumber();
+            var res = last.mul(inp.value).toNumber();
             if(res >= 1000){
                 if(Number.isInteger(res)){
                     res = res.toLocaleString();
                 } else {
-                    var numbers = String(res).split('.');
+                    numbers = String(res).split('.');
                     res = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
                 }
             }
@@ -184,11 +341,11 @@ function ooo(){
     }
 }
 inp.addEventListener('keyup',function(){
-    ooo();
+    ans();
 });
 inp.addEventListener('change',function(){
-    ooo();
+    ans();
 });
 inp.addEventListener('DOMFocusOut',function(){
-    ooo();
+    ans();
 });
