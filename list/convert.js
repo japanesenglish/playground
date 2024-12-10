@@ -1,12 +1,12 @@
 //単位群の選択
 let tops = document.querySelectorAll('.top');
 let z = 1;
-var now = 0;
+var now = 'a';
 tops.forEach(function(car){
     car.addEventListener('click',function(){
         z = z + 1;
         if(car.classList.contains('aaa')){
-            now = 0;
+            now = 'a';
             document.getElementById('aaabox').style.zIndex = z;
             document.getElementById('aaabox').style.display = 'block';
             document.getElementById('bbbbox').style.display = 'none';
@@ -21,7 +21,7 @@ tops.forEach(function(car){
             document.querySelector('.top.ccc').style.top = '-5px';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         } else if (car.classList.contains('bbb')){
-            now = 1;
+            now = 'b';
             document.getElementById('bbbbox').style.zIndex = z;
             document.getElementById('bbbbox').style.display = 'block';
             document.getElementById('aaabox').style.display = 'none';
@@ -36,7 +36,7 @@ tops.forEach(function(car){
             document.querySelector('.top.ccc').style.top = '-5px';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         } else if (car.classList.contains('ccc')){
-            now = 2;
+            now = 'c';
             document.getElementById('cccbox').style.zIndex = z;
             document.getElementById('cccbox').style.display = 'block';
             document.getElementById('aaabox').style.display = 'none';
@@ -69,7 +69,7 @@ var num3 = '';
 function list(un){
     let abrate = ''
     //長さ
-    if(now = 0){
+    if(now = 'a'){
         if(un == 'nm'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μm'){
@@ -139,7 +139,7 @@ function list(un){
         }
     }
     //重さ
-    if(now = 1){
+    if(now = 'b'){
         if(un == 'ng'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μg'){
@@ -177,7 +177,7 @@ function list(un){
         }
     }
     //面積
-    if(now = 2){
+    if(now = 'c'){
         if(un == 'n㎡'){
             abrate = new Decimal('0.000000000000000001');
         } else if (un == 'μ㎡'){
@@ -248,20 +248,6 @@ function list(un){
             abrate = new Decimal('377974790000');
         } else if (un == '世界'){
             abrate = new Decimal('130094010000000');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
-        } else if (un == ''){
-            abrate = new Decimal('');
         }
     }
     return abrate;
