@@ -57,7 +57,7 @@ div:has(#result){
         position: absolute;
         & .before{
             position: relative;
-            width: 400px;
+            width: 380px;
             background-color: white;
             border: black solid 1px;
             border-bottom: none;
@@ -72,10 +72,13 @@ div:has(#result){
                 border-radius: 5px 0px 0px 5px;
                 z-index: -1;
             }
+            & div:nth-of-type(odd){
+                background-color: #e2e2e2;
+            }
         }
         & .after{
             position: relative;
-            width: 400px;
+            width: 380px;
             background-color: white;
             border: black solid 1px;
             &::before{
@@ -89,17 +92,18 @@ div:has(#result){
                 border-radius: 5px 0px 0px 5px;
                 z-index: -1;
             }
+            & div:nth-of-type(odd){
+                background-color: #e2e2e2;
+            }
         }
         & .before>div,.after>div{
-            padding: 5px 0px;
+            padding: 3px 0px;
         }
         & .before span,.after span{
-            padding: 0px 10px;
+            padding: 0px 8px;
         }
     }
     & #bbbbox,#cccbox{      /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         display: none;
     }
 }
-
-
