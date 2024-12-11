@@ -2,13 +2,17 @@
     & h2{
         margin: 10px 0px;
     }
+div:has(input){
+    width: 99em;
+    max-width: 400px;
     & input{
-        float: left;
-        width: 99em;
-        max-width: 400px;
-        margin: 0px 3px 0px 0px;
+        width: 100%;
         text-align: right;
     }
+    & #bfc{
+        text-align: right;
+    }
+}
 
 /*結果*/
 div:has(#result){
