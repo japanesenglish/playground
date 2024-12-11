@@ -4,7 +4,8 @@
     }
     & input{
         float: left;
-        width: 99%;
+        width: 99em;
+        max-width: 400px;
         margin: 0px 3px 0px 0px;
         text-align: right;
     }
