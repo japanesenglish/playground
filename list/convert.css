@@ -6,7 +6,7 @@ div:has(h2){
     }
     & input{
         float: left;
-        width: 250px;
+        width: 220px;
         margin: -2px 3px 0px 0px;
         text-align: right;
     }
