@@ -1,16 +1,14 @@
 @charset "utf-8";
-div:has(h2){
-    margin-left: 20px;
     & h2{
         margin: 10px 0px;
     }
-}
-/*入力欄*/
-input{
-    width: 250px;
-    margin-right: 3px;
-    text-align: right;
-}
+    & input{
+        float: left;
+        width: 99%;
+        margin: 0px 3px 0px 0px;
+        text-align: right;
+    }
+
 /*結果*/
 div:has(#result){
     padding: 10px 0px 15px 0px;
