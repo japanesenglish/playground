@@ -405,3 +405,22 @@ inp.addEventListener('change',function(){
 inp.addEventListener('DOMFocusOut',function(){
     ans();
 });
+
+//電卓
+var den = document.getElementById('den');
+let clo = document.getElementById('close');
+clo.addEventListener('click',function(){
+    den.classList.toggle('sm');
+    den.classList.toggle('bg');
+})
+let numkeys = document.querySelectorAll('.numkey');
+numkeys.forEach(function(car){
+    car.addEventListener('click',function(){
+        document.querySelector('input').value = document.querySelector('input').value + car.innerHTML;
+        ans();
+    })
+})
+document.getElementById('clear').addEventListener('click',function(){
+    document.querySelector('input').value = document.querySelector('input').value.substring(0,document.querySelector('input').value.length-1);
+    ans();
+})

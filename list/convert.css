@@ -1,15 +1,13 @@
 @charset "utf-8";
+div:has(h2){
+    margin-left: 20px;
     & h2{
         margin: 10px 0px;
     }
-div:has(input){
-    width: 99em;
-    max-width: 400px;
     & input{
-        width: 100%;
-        text-align: right;
-    }
-    & #bfc{
+        float: left;
+        width: 250px;
+        margin: -2px 3px 0px 0px;
         text-align: right;
     }
 }
@@ -123,5 +121,46 @@ div:has(#result){
     }
     & #bbbbox,#cccbox,#dddbox{      /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         display: none;
+    }
+}
+/*計算機（スマホ用）*/
+#den{
+    position: fixed;
+    width: 186px;
+    font-size: 40px;
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: calc(infinity);
+    transition: all 0.4s;
+    &.sm{
+        bottom: -160px;
+        right: -100px;
+        background-color: #dddddd;
+        & #close{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &.bg{
+        bottom: 50px;
+        right: 100px;
+        background-color: white;
+        & #close{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            height: 61px;
+            width: 61px;
+        }
+    }
+    & div div{
+        float: right;
+        height: 60px;
+        width: 60px;
+        border: gray solid 1px;
+        transition: all 0.5s;
     }
 }
