@@ -1,14 +1,19 @@
 @charset "utf-8";
+div:has(h2){
+    margin-left: 20px;
+    & h2{
+        margin: 10px 0px;
+    }
+}
 /*入力欄*/
 input{
-    width: 200px;
+    width: 250px;
     margin-right: 3px;
     text-align: right;
 }
 /*結果*/
-
 div:has(#result){
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0px 15px 0px;
     & #result{
         display: inline-block;
         height: auto;
@@ -29,12 +34,15 @@ div:has(#result){
         height: 25px;
         & .top{
             position: absolute;
-            height: 40px;
+            height: 30px;
             width: 50px;
             border: black solid 1px;
             background-color: white;
             border-radius: 5px 5px 0px 0px;
             text-align: center;
+            &:hover{
+                cursor: pointer;
+            }
             & div{
                 border-bottom: black solid 1px;
                 border-radius: 5px;
@@ -50,10 +58,14 @@ div:has(#result){
                 top: -5px;
                 left: 104px;
             }
+            &.ddd{
+                top: -5px;
+                left: 156px;
+            }
             /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         }
     }
-    & #aaabox,#bbbbox,#cccbox{  /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+    & #aaabox,#bbbbox,#cccbox,#dddbox{  /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         position: absolute;
         & .before{
             position: relative;
@@ -97,13 +109,16 @@ div:has(#result){
             }
         }
         & .before>div,.after>div{
-            padding: 3px 0px;
+            padding: 2px 0px;
         }
         & .before span,.after span{
             padding: 0px 8px;
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
-    & #bbbbox,#cccbox{      /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+    & #bbbbox,#cccbox,#dddbox{      /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         display: none;
     }
 }

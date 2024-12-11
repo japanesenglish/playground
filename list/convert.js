@@ -11,14 +11,17 @@ tops.forEach(function(car){
             document.getElementById('aaabox').style.display = 'block';
             document.getElementById('bbbbox').style.display = 'none';
             document.getElementById('cccbox').style.display = 'none';
+            document.getElementById('dddbox').style.display = 'none';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.aaa').style.background = '#c4c4c4';
             document.querySelector('.top.bbb').style.background = 'white';
             document.querySelector('.top.ccc').style.background = 'white';
+            document.querySelector('.top.ddd').style.background = 'white';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.aaa').style.top = '0';
             document.querySelector('.top.bbb').style.top = '-5px';
             document.querySelector('.top.ccc').style.top = '-5px';
+            document.querySelector('.top.ddd').style.top = '-5px';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         } else if (car.classList.contains('bbb')){
             now = 'b';
@@ -26,14 +29,17 @@ tops.forEach(function(car){
             document.getElementById('bbbbox').style.display = 'block';
             document.getElementById('aaabox').style.display = 'none';
             document.getElementById('cccbox').style.display = 'none';
+            document.getElementById('dddbox').style.display = 'none';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.bbb').style.background = '#c4c4c4';
             document.querySelector('.top.aaa').style.background = 'white';
             document.querySelector('.top.ccc').style.background = 'white';
+            document.querySelector('.top.ddd').style.background = 'white';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.bbb').style.top = '0';
             document.querySelector('.top.aaa').style.top = '-5px';
             document.querySelector('.top.ccc').style.top = '-5px';
+            document.querySelector('.top.ddd').style.top = '-5px';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         } else if (car.classList.contains('ccc')){
             now = 'c';
@@ -41,14 +47,35 @@ tops.forEach(function(car){
             document.getElementById('cccbox').style.display = 'block';
             document.getElementById('aaabox').style.display = 'none';
             document.getElementById('bbbbox').style.display = 'none';
+            document.getElementById('dddbox').style.display = 'none';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.ccc').style.background = '#c4c4c4';
             document.querySelector('.top.aaa').style.background = 'white';
             document.querySelector('.top.bbb').style.background = 'white';
+            document.querySelector('.top.ddd').style.background = 'white';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
             document.querySelector('.top.ccc').style.top = '0';
             document.querySelector('.top.aaa').style.top = '-5px';
             document.querySelector('.top.bbb').style.top = '-5px';
+            document.querySelector('.top.ddd').style.top = '-5px';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        } else if (car.classList.contains('ddd')){
+            now = 'd';
+            document.getElementById('dddbox').style.zIndex = z;
+            document.getElementById('dddbox').style.display = 'block';
+            document.getElementById('aaabox').style.display = 'none';
+            document.getElementById('bbbbox').style.display = 'none';
+            document.getElementById('cccbox').style.display = 'none';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.ddd').style.background = '#c4c4c4';
+            document.querySelector('.top.aaa').style.background = 'white';
+            document.querySelector('.top.bbb').style.background = 'white';
+            document.querySelector('.top.ccc').style.background = 'white';
+            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+            document.querySelector('.top.ddd').style.top = '0';
+            document.querySelector('.top.aaa').style.top = '-5px';
+            document.querySelector('.top.bbb').style.top = '-5px';
+            document.querySelector('.top.ccc').style.top = '-5px';
             //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         }
         //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
@@ -69,7 +96,7 @@ var num3 = '';
 function list(un){
     let abrate = ''
     //長さ
-    if(now = 'a'){
+    if(now == 'a'){
         if(un == 'nm'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μm'){
@@ -139,7 +166,7 @@ function list(un){
         }
     }
     //重さ
-    if(now = 'b'){
+    if(now == 'b'){
         if(un == 'ng'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μg'){
@@ -177,7 +204,7 @@ function list(un){
         }
     }
     //面積
-    if(now = 'c'){
+    if(now == 'c'){
         if(un == 'n㎡'){
             abrate = new Decimal('0.000000000000000001');
         } else if (un == 'μ㎡'){
@@ -188,29 +215,14 @@ function list(un){
             abrate = new Decimal('0.0001');
         } else if (un == '㎡'){
             abrate = new Decimal('1');
+        } else if (un == 'k㎡'){
+            abrate = new Decimal('1000000');
         } else if (un == 'a'){
             abrate = new Decimal('100');
         } else if (un == 'ha'){
             abrate = new Decimal('10000');
-        } else if (un == 'k㎡'){
-            abrate = new Decimal('1000000');
-        } else if (un == '方寸'){
-            num1 = new Decimal('1');
-            num2 = new Decimal('33');
-            num3 = num1.div(num2);
-            abrate = num3.mul(num3);
-        } else if (un == '方尺'){
-            num1 = new Decimal('10');
-            num2 = new Decimal('33');
-            num3 = num1.div(num2);
-            abrate = num3.mul(num3);
         } else if (un == '坪(歩)'){
             num1 = new Decimal('60');
-            num2 = new Decimal('33');
-            num3 = num1.div(num2);
-            abrate = num3.mul(num3);
-        } else if (un == '方丈'){
-            num1 = new Decimal('100');
             num2 = new Decimal('33');
             num3 = num1.div(num2);
             abrate = num3.mul(num3);
@@ -236,12 +248,12 @@ function list(un){
             abrate = new Decimal('0.09290304');
         } else if (un == '平方ヤード'){
             abrate = new Decimal('0.83612736');
+        } else if (un == '平方マイル'){
+            abrate = new Decimal('2589988.110336');
         } else if (un == 'ルード'){
             abrate = new Decimal('1011.7141056');
         } else if (un == 'エーカー'){
             abrate = new Decimal('4046.8564224');
-        } else if (un == '平方マイル'){
-            abrate = new Decimal('2589988.110336');
         } else if (un == '東京ドーム'){
             abrate = new Decimal('46755');
         } else if (un == '日本'){
@@ -250,15 +262,72 @@ function list(un){
             abrate = new Decimal('130094010000000');
         }
     }
+    //体積
+    if(now == 'd'){
+        if(un == 'n㎥'){
+            abrate = new Decimal('0.000000000000000000000000001');
+        } else if (un == 'μ㎥'){
+            abrate = new Decimal('0.000000000000000001');
+        } else if (un == 'm㎥'){
+            abrate = new Decimal('0.000000001');
+        } else if (un == 'c㎥'){
+            abrate = new Decimal('0.000001');
+        } else if (un == '㎥'){
+            abrate = new Decimal('1');
+        } else if (un == 'k㎥'){
+            abrate = new Decimal('1000000000');
+        } else if (un == 'mL(cc)'){
+            abrate = new Decimal('0.000001');
+        } else if (un == 'dL'){
+            abrate = new Decimal('0.0001');
+        } else if (un == 'L'){
+            abrate = new Decimal('0.001');
+        } else if (un == 'kL'){
+            abrate = new Decimal('1');
+        } else if (un == '勺'){
+            num1 = new Decimal('2401');
+            num2 = new Decimal('133100000')
+            abrate = num1.div(num2);
+        } else if (un == '合'){
+            num1 = new Decimal('2401');
+            num2 = new Decimal('13310000')
+            abrate = num1.div(num2);
+        } else if (un == '升'){
+            num1 = new Decimal('2401');
+            num2 = new Decimal('1331000')
+            abrate = num1.div(num2);
+        } else if (un == '斗'){
+            num1 = new Decimal('2401');
+            num2 = new Decimal('133100')
+            abrate = num1.div(num2);
+        } else if (un == '石'){
+            num1 = new Decimal('2401');
+            num2 = new Decimal('13310')
+            abrate = num1.div(num2);
+        } else if (un == 'ガロン(日)'){
+            abrate = new Decimal('0.003785412');
+        } else if (un == 'ガロン(米)'){
+            abrate = new Decimal('0.003785411784');
+        } else if (un == 'ガロン(英)'){
+            abrate = new Decimal('0.00454609');
+        } else if (un == '小さじ'){
+            abrate = new Decimal('0.000005');
+        } else if (un == '大さじ'){
+            abrate = new Decimal('0.000015');
+        } else if (un == '東京ドーム'){
+            abrate = new Decimal('1240000');
+        }
+    }
+    //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
     return abrate;
-    //要追加、折り畳みは「範囲選択後 ctrl+K→, 」ーーーーーーーーーーーーーーーーーーーーーーー//
 }
 //変換前の選択
 let bu1 = document.querySelectorAll('#aaabef span');
 let bu2 = document.querySelectorAll('#bbbbef span');
 let bu3 = document.querySelectorAll('#cccbef span');
+let bu4 = document.querySelectorAll('#dddbef span');
 //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-let bunions = [...bu1,...bu2,...bu3]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let bunions = [...bu1,...bu2,...bu3,...bu4]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
 var brate = '';
 bunions.forEach(function(car){
     car.addEventListener('click',function(){
@@ -273,8 +342,9 @@ bunions.forEach(function(car){
 let au1 = document.querySelectorAll('#aaaaft span');
 let au2 = document.querySelectorAll('#bbbaft span');
 let au3 = document.querySelectorAll('#cccaft span');
+let au4 = document.querySelectorAll('#dddaft span');
 //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-let aunions = [...au1,...au2,...au3]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let aunions = [...au1,...au2,...au3,...au4]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
 var arate = '';
 aunions.forEach(function(car){
     car.addEventListener('click',function(){
