@@ -376,12 +376,15 @@ function rat(b,a){
 };
 //計算
 var last = '';
-let inp = document.querySelector('input');
+var inp = document.querySelector('input');
 let result = document.getElementById('result');
 function ans(){
+    inp = document.querySelector('input');
+    inp = String(inp.value).replaceAll(',','');
     if(last !== ''){
-        if(inp.value !== ''){
-            var res = last.mul(inp.value).toNumber();
+        if(inp !== ''){
+            dinp = new Decimal(inp);
+            var res = last.mul(dinp).toNumber();
             if(res >= 1000){
                 if(Number.isInteger(res)){
                     res = res.toLocaleString();
@@ -394,6 +397,16 @@ function ans(){
         } else {
             result.innerHTML = '';
         }
+    } 
+    if(inp >= 1000){
+        if(String(inp).includes('.') == false){
+            document.querySelector('input').value = Number(inp).toLocaleString();
+        } else {
+            numbers = String(inp).split('.');
+            res = Number(numbers[0]).toLocaleString() + '.' + numbers[1];
+        }
+    } else {
+        document.querySelector('input').value = inp;
     }
 }
 inp.addEventListener('keyup',function(){
@@ -408,19 +421,35 @@ inp.addEventListener('DOMFocusOut',function(){
 
 //電卓
 var den = document.getElementById('den');
-let clo = document.getElementById('close');
-clo.addEventListener('click',function(){
-    den.classList.toggle('sm');
-    den.classList.toggle('bg');
-})
+let all = document.querySelector('html');
+all.addEventListener('click',function(e){
+    if(den.classList.contains('sm') && e.target.classList.contains('no')){
+        den.classList.toggle('sm');
+        den.classList.toggle('bg');
+    } else if (den.classList.contains('bg') && e.target.classList.contains('no') == false){
+        den.classList.toggle('sm');
+        den.classList.toggle('bg');
+    };
+});
+
 let numkeys = document.querySelectorAll('.numkey');
 numkeys.forEach(function(car){
     car.addEventListener('click',function(){
-        document.querySelector('input').value = document.querySelector('input').value + car.innerHTML;
-        ans();
+        if(den.classList.contains('bg')){
+            if(car.classList.contains('dot')){
+                document.querySelector('input').value = document.querySelector('input').value + '.';
+            } else {
+                document.querySelector('input').value = document.querySelector('input').value + car.innerHTML;
+            }
+            ans();
+        }
     })
 })
 document.getElementById('clear').addEventListener('click',function(){
     document.querySelector('input').value = document.querySelector('input').value.substring(0,document.querySelector('input').value.length-1);
+    ans();
+})
+document.getElementById('allclear').addEventListener('click',function(){
+    document.querySelector('input').value = '';
     ans();
 })

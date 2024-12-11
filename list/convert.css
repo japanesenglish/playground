@@ -132,29 +132,17 @@ div:has(#result){
     border: black solid 2px;
     border-radius: 5px;
     overflow: hidden;
-    z-index: calc(infinity);
+    z-index: 2147483647;
     transition: all 0.4s;
     &.sm{
-        bottom: -160px;
+        bottom: -220px;
         right: -100px;
         background-color: #dddddd;
-        & #close{
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
     }
     &.bg{
-        bottom: 50px;
+        bottom: 30px;
         right: 100px;
         background-color: white;
-        & #close{
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            height: 61px;
-            width: 61px;
-        }
     }
     & div div{
         float: right;

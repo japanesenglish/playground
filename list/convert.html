@@ -18,7 +18,7 @@
 
       <div>
          <h2>単位変換</h2>
-         <input type="number"><div id="bfc">単位：下から選択</div>
+         <input><div id="bfc">単位：下から選択</div>
          <div>⇩<span id="rate"></span></div>
          <div><span id="result"></span><span id="afc">単位：下から選択</span></div>
       </div>
@@ -288,23 +288,26 @@
 
       <div id="den" class="sm">
          <div>
-            <div id="9" class="numkey">9</div>
-            <div id="8" class="numkey">8</div>
-            <div id="7" class="numkey">7</div>
+            <div class="numkey no">9</div>
+            <div class="numkey no">8</div>
+            <div class="numkey no">7</div>
          </div><div>
-            <div id="6" class="numkey">6</div>
-            <div id="5" class="numkey">5</div>
-            <div id="4" class="numkey">4</div>
+            <div class="numkey no">6</div>
+            <div class="numkey no">5</div>
+            <div class="numkey no">4</div>
          </div><div>
-            <div id="3" class="numkey">3</div>
-            <div id="2" class="numkey">2</div>
-            <div id="1" class="numkey">1</div>
+            <div class="numkey no">3</div>
+            <div class="numkey no">2</div>
+            <div class="numkey no">1</div>
          </div><div>
-            <div>↘</div>
-            <div id="0" class="numkey">0</div>
-            <div id="clear">◁</div>
+            <div class="numkey no">000</div>
+            <div class="numkey no">00</div>
+            <div class="numkey no">0</div>
+         </div><div>
+            <div id="allclear" class="no">AC</div>
+            <div id="clear" class="no">C</div>
+            <div class="numkey no dot">.</div>
          </div>
-         <div id="close"></div>
       </div>
 
       <script src="../index.js"></script>
