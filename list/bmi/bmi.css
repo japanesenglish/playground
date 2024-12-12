@@ -5,11 +5,14 @@
     & h2{
         margin: 10px 0px;
     }
-    & input{
-        float: left;
-        width: 220px;
-        margin: -2px 3px 0px 0px;
-        text-align: right;
+    & div:has(input){
+        margin: 0px 0px 10px 0px;
+        & input{
+            float: left;
+            width: 220px;
+            margin: -2px 3px 0px 0px;
+            text-align: right;
+        }
     }
     & div:has(#result){
         font-size: 120%;
