@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>BMI（作成中）</title>
+      <link rel="icon" href="../../icon.jpg">
+      <link rel="apple-touch-icon" sizes="192x192" href="../../icon.jpg">
+      <link rel="stylesheet" type="text/css" href="../../index.css" />
+      <link rel="stylesheet" type="text/css" href="bmi.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/9.0.0/decimal.min.js"></script>
+   </head>
+   <body>
+      <div id="home"><a href="../../index.html">HOME</a></div>
+      <div id="op">≡</div>
+      <iframe id="li" src="../../list.html"></iframe>
+
+      <div id="top">
+         <h2>BMI（体重kg÷身長m²）</h2>
+         ※入力はcmで
+         <div><input id="cm">cm</div>
+         <div><input id="kg">kg</div>
+         <div>=<span id="result"></span></div>
+      </div>
+      <div id="bot">
+         <div id="graph">
+            <div id="dot"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+            <div class="grad"></div>
+         </div>
+      </div>
+
+      <div class="den sm">
+         <div>
+            <div>9</div>
+            <div>8</div>
+            <div>7</div>
+         </div><div>
+            <div>6</div>
+            <div>5</div>
+            <div>4</div>
+         </div><div>
+            <div>3</div>
+            <div>2</div>
+            <div>1</div>
+         </div><div>
+            <div>⇅</div>
+            <div>00</div>
+            <div>0</div>
+         </div><div>
+            <div>AC</div>
+            <div>C</div>
+            <div>.</div>
+         </div>
+      </div>
+      <div id="den" class="den sm topinp">
+         <div>
+            <div id="9" class="numkey no"></div>
+            <div id="8" class="numkey no"></div>
+            <div id="7" class="numkey no"></div>
+         </div><div>
+            <div id="6" class="numkey no"></div>
+            <div id="5" class="numkey no"></div>
+            <div id="4" class="numkey no"></div>
+         </div><div>
+            <div id="3" class="numkey no"></div>
+            <div id="2" class="numkey no"></div>
+            <div id="1" class="numkey no"></div>
+         </div><div>
+            <div class="numkey no change"></div>
+            <div id="00" class="numkey no"></div>
+            <div id="0" class="numkey no"></div>
+         </div><div>
+            <div id="allclear" class="no"></div>
+            <div id="clear" class="no"></div>
+            <div class="numkey no dot"></div>
+         </div>
+      </div>
+
+      <script src="../../index.js"></script>
+      <script src="bmi.js"></script>
+   </body>
+</html>

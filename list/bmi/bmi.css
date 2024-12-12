@@ -1,0 +1,81 @@
+@charset "utf-8";
+/*上部*/
+#top{
+    margin-left: 20px;
+    & h2{
+        margin: 10px 0px;
+    }
+    & input{
+        float: left;
+        width: 220px;
+        margin: -2px 3px 0px 0px;
+        text-align: right;
+    }
+    & div:has(#result){
+        font-size: 120%;
+        padding: 15px 0px 25px 0px;
+        font-weight: bold;
+        & #result{
+            display: inline-block;
+            height: auto;
+            width: auto;
+        }
+    }
+}
+
+/*下部*/
+#bot{
+    margin-left: 20px;
+    & #graph{
+        position: relative;
+        height: 250px;
+        width: 250px;
+        background-color: red;
+        & #dot{
+            position: absolute;
+            bottom: 0px;
+            height: 2px;
+            width: 2px;
+            background-color: black;
+            border: black solid 1px;
+            border-radius: 50%;
+        }
+        & div{
+            height: 1px;
+            background-color: black;
+        }
+    }
+}
+
+/*電卓*/
+.den{
+    position: fixed;
+    width: 186px;
+    font-size: 40px;
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 2147483647;
+    transition: all 0.4s;
+    &.sm{
+        bottom: -220px;
+        right: -100px;
+        background-color: #dddddd;
+    }
+    &.bg{
+        bottom: 30px;
+        right: 100px;
+        background-color: white;
+    }
+    & div div{
+        float: right;
+        height: 60px;
+        width: 60px;
+        border: gray solid 1px;
+        transition: all 0.5s;
+    }
+}
+#den{
+    background-color: rgba(255, 0, 0, 0);
+}
