@@ -10,5 +10,4 @@ op.addEventListener('click',function(){
         li.style.height = '';
         li.style.width = '';
     }
-    console.log('aaaaa');
 });

@@ -335,7 +335,7 @@ bunions.forEach(function(car){
         document.getElementById('bfc').innerHTML = un;
         brate = list(un);
         rat(brate,arate);
-        ans();
+        cal();
     });
 });
 //変換後の選択
@@ -352,7 +352,7 @@ aunions.forEach(function(car){
         document.getElementById('afc').innerHTML = un;
         arate = list(un);
         rat(brate,arate);
-        ans();
+        cal();
     })
 })
 //倍率計算
@@ -378,7 +378,7 @@ function rat(b,a){
 var last = '';
 var inp = document.querySelector('input');
 let result = document.getElementById('result');
-function ans(){
+function cal(){
     inp = document.querySelector('input');
     inp = String(inp.value).replaceAll(',','');
     if(last !== ''){
@@ -410,51 +410,51 @@ function ans(){
     }
 }
 inp.addEventListener('keyup',function(){
-    ans();
+    cal();
 });
 inp.addEventListener('change',function(){
-    ans();
+    cal();
 });
 inp.addEventListener('DOMFocusOut',function(){
-    ans();
+    cal();
 });
 
 //電卓
 var den = document.getElementById('den');
 var dens = document.querySelectorAll('.den')
 let all = document.querySelector('html');
+let cicon = document.querySelector('.iconc');
 all.addEventListener('click',function(e){
-    if(den.classList.contains('sm') && e.target.classList.contains('no')){
+    if(den.classList.contains('in') == false && e.target.classList.contains('iconc')){
         dens.forEach(function(car){
-            car.classList.toggle('sm');
-            car.classList.toggle('bg');
+            car.classList.toggle('in');
         });
-    } else if (den.classList.contains('bg') && e.target.classList.contains('no') == false){
+        cicon.classList.toggle('out');
+    } else if (den.classList.contains('in') && e.target.classList.contains('no') == false){
         dens.forEach(function(car){
-            car.classList.toggle('sm');
-            car.classList.toggle('bg');
+            car.classList.toggle('in');
         });
+        cicon.classList.toggle('out');
     };
 });
-
 let numkeys = document.querySelectorAll('.numkey');
 numkeys.forEach(function(car){
     car.addEventListener('click',function(){
-        if(den.classList.contains('bg')){
+        if(den.classList.contains('in')){
             if(car.classList.contains('dot')){
                 document.querySelector('input').value = document.querySelector('input').value + '.';
             } else {
                 document.querySelector('input').value = document.querySelector('input').value + car.getAttribute('id');
             }
-            ans();
+            cal();
         }
     })
 })
 document.getElementById('clear').addEventListener('click',function(){
     document.querySelector('input').value = document.querySelector('input').value.substring(0,document.querySelector('input').value.length-1);
-    ans();
+    cal();
 })
 document.getElementById('allclear').addEventListener('click',function(){
     document.querySelector('input').value = '';
-    ans();
+    cal();
 })

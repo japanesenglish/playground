@@ -29,23 +29,91 @@
 /*下部*/
 #bot{
     margin-left: 20px;
+    & #basebox{
+        position: relative;
+        & table{
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 400px;
+            & th,td{
+                border: black solid 1px;
+                height: 30px;
+            }
+        }
+        & #migiya{
+            position: absolute;
+            top: 25px;
+            left: -16px;
+            border-left: rgb(37, 37, 37) solid 16px;
+            border-top: transparent solid 8px;
+            border-bottom: transparent solid 8px;
+            transition: all 0.5s;
+        }
+    }
+    & #bar{
+        position: relative;
+        height: 40px;
+        width: 400px;
+        background-color: rgb(255, 64, 64);
+        border: rgb(73, 73, 73) solid 1px;
+        margin: 50px 0px;
+        & #sitaya{
+            position: absolute;
+            top: -16px;
+            left: -8px;
+            border-top: rgb(37, 37, 37) solid 16px;
+            border-right: transparent solid 8px;
+            border-left: transparent solid 8px;
+            transition: all 0.5s;
+        }
+        & .line{
+            position: absolute;
+            top: 40px;
+            left: -1px;
+            height: 15px;
+            width: 1px;
+            background-color: rgb(73, 73, 73);
+            &.bald{
+                height: 20px;
+                width: 2px;
+                & div{
+                    position: absolute;
+                    top: 22px;
+                    left: -20px;
+                    width: 50px;
+                    text-align: center;
+                }
+            }
+        }
+    }
     & #graph{
         position: relative;
         height: 250px;
-        width: 250px;
-        background-color: red;
+        width: 400px;
+        border: rgb(73, 73, 73) solid 1px;
         & #dot{
             position: absolute;
-            bottom: 0px;
+            top: -2px;
+            left: -2px;
             height: 2px;
             width: 2px;
             background-color: black;
             border: black solid 1px;
             border-radius: 50%;
+            transition: all 0.5s;
         }
-        & div{
+        & #mincm{
+            position: absolute;
+            top: -10px;
+            left: -20px;
+        }
+        & #maxcm{
+            position: absolute;
+            bottom: -25px;
+            left: -23px;
+        }
+        & .grad{
             height: 1px;
-            background-color: black;
         }
     }
 }
@@ -61,14 +129,12 @@
     overflow: hidden;
     z-index: 2147483647;
     transition: all 0.4s;
-    &.sm{
-        bottom: -220px;
-        right: -100px;
-        background-color: #dddddd;
-    }
-    &.bg{
+    bottom: -400px;
+    right: -200px;
+    background-color: white;
+    &.in{
         bottom: 30px;
-        right: 100px;
+        right: 80px;
         background-color: white;
     }
     & div div{
@@ -76,9 +142,25 @@
         height: 60px;
         width: 60px;
         border: gray solid 1px;
-        transition: all 0.5s;
+        transition: all 0.4s;
+    }
+    &#den{
+    background-color: rgba(255, 0, 0, 0);
     }
 }
-#den{
-    background-color: rgba(255, 0, 0, 0);
+.iconc{
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: #00000042;
+    border: #00000088 solid 3px;
+    border-radius: 50%;
+    z-index: 2147483647;
+    transition: all 0.4s;
+}
+.out{
+    bottom: -100px;
+    right: -100px;
 }

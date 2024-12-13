@@ -133,14 +133,12 @@
     overflow: hidden;
     z-index: 2147483647;
     transition: all 0.4s;
-    &.sm{
-        bottom: -220px;
-        right: -100px;
-        background-color: #dddddd;
-    }
-    &.bg{
+    bottom: -400px;
+    right: -200px;
+    background-color: white;
+    &.in{
         bottom: 30px;
-        right: 100px;
+        right: 80px;
         background-color: white;
     }
     & div div{
@@ -148,9 +146,24 @@
         height: 60px;
         width: 60px;
         border: gray solid 1px;
-        transition: all 0.5s;
+    }
+    &#den{
+        background-color: rgba(255, 0, 0, 0);
     }
 }
-#den{
-    background-color: rgba(255, 0, 0, 0);
+.iconc{
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0.26);
+    border: rgba(0, 0, 0, 0.534) solid 3px;
+    border-radius: 50%;
+    z-index: 2147483647;
+    transition: all 0.4s;
+    &.out{
+        bottom: -100px;
+        right: -100px;
+    }
 }
