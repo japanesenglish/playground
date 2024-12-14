@@ -27,6 +27,9 @@ iframe{
     border-bottom: black solid 1px;
     border-radius: 0px 0px 25% 0px;
     z-index: 2147483647;
+    &:hover{
+        cursor: pointer;
+    }
 }
 #li{
     height: 0px;

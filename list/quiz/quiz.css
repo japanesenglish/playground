@@ -1,0 +1,95 @@
+@charset "utf-8";
+/*上部*/
+#top{
+    margin-left: 20px;
+    & h2{
+        margin: 10px 0px 30px 0px;
+    }
+    & input{
+        float: left;
+        width: 220px;
+        margin: -2px 3px 0px 0px;
+        text-align: right;
+    }
+    & div:has(#result){
+        font-size: 120%;
+        padding: 15px 0px 25px 0px;
+        & #result{
+            display: inline-block;
+            height: auto;
+            width: auto;
+            margin: 0px 4px -4px 0px;
+            font-weight: bold;
+        }
+    }
+}
+
+/*単位選択欄*/
+#bot{
+    position: relative;
+    margin-left: 20px;
+    & .quizbox{
+        height: auto;
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 25px;
+        & .ac{
+            text-align: center;
+            font-size: 120%;
+            background: linear-gradient(rgba(0, 0, 0, 0.253) ,transparent 50%,rgba(0, 0, 0, 0.253) 100%);
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        & .acbox{
+            height: 0px;     /*ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+            overflow: hidden;
+            transition: all 0.4s;
+            & .acc{
+                & .choice{
+                    position: relative;
+                    display: inline-block;
+                    line-height: 100px;
+                    height: 100px;
+                    width: 45%;
+                    text-align: center;
+                    background-color: white;
+                    border: black solid 1px;
+                    border-radius: 10px;
+                    margin: 1%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    & div{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: rotate(45deg);
+                        height: 5px;
+                        width: 80px;
+                        margin: 0px 0px 0px -40px;
+                        transition: all 1s;
+                        & div{
+                            transform: rotate(90deg);
+                            height: 5px;
+                            width: 80px;
+                            margin: -5px 0px 0px -40px;
+                        }
+                    }
+                    &.correct div{
+                        height: 80px;
+                        margin: -45px 0px 0px -45px;
+                        border: transparent solid 5px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            & .aca{
+                height: 0px;
+                overflow: hidden;
+                transition: all 0.4s;
+            }
+        }
+    }
+}
+
