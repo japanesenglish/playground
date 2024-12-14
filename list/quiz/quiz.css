@@ -5,23 +5,6 @@
     & h2{
         margin: 10px 0px 30px 0px;
     }
-    & input{
-        float: left;
-        width: 220px;
-        margin: -2px 3px 0px 0px;
-        text-align: right;
-    }
-    & div:has(#result){
-        font-size: 120%;
-        padding: 15px 0px 25px 0px;
-        & #result{
-            display: inline-block;
-            height: auto;
-            width: auto;
-            margin: 0px 4px -4px 0px;
-            font-weight: bold;
-        }
-    }
 }
 
 /*単位選択欄*/
