@@ -176,6 +176,7 @@ all.addEventListener('click',function(e){
         dens.forEach(function(car){
             car.classList.toggle('in');
             document.getElementById('cm').style.border = 'black solid 2px';
+            document.getElementById('cm').value = '';
         });
         cicon.classList.toggle('out');
     } else if (den.classList.contains('in') && e.target.classList.contains('no') == false){
