@@ -34,10 +34,10 @@
         & table{
             border-collapse: collapse;
             border-spacing: 0px;
-            width: 400px;
             & th,td{
                 border: black solid 1px;
                 height: 30px;
+                width: auto;
             }
         }
         & #migiya{
@@ -116,50 +116,4 @@
             height: 1px;
         }
     }
-}
-/*電卓*/
-.den{
-    position: fixed;
-    width: 186px;
-    font-size: 40px;
-    text-align: center;
-    border: black solid 2px;
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 2147483647;
-    transition: all 0.4s;
-    bottom: -400px;
-    right: -200px;
-    background-color: white;
-    &.in{
-        bottom: 30px;
-        right: 80px;
-        background-color: white;
-    }
-    & div div{
-        float: right;
-        height: 60px;
-        width: 60px;
-        border: gray solid 1px;
-        transition: all 0.4s;
-    }
-    &#den{
-    background-color: rgba(255, 0, 0, 0);
-    }
-}
-.iconc{
-    position: fixed;
-    bottom: 50px;
-    right: 30px;
-    height: 60px;
-    width: 60px;
-    background-color: #00000042;
-    border: #00000088 solid 3px;
-    border-radius: 50%;
-    z-index: 2147483647;
-    transition: all 0.4s;
-}
-.out{
-    bottom: -100px;
-    right: -100px;
 }
