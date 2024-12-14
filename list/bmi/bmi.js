@@ -201,6 +201,7 @@ numkeys.forEach(function(car){
                 } else if(car.classList.contains('change')){
                     document.getElementById('kg').style.border = 'black solid 2px';
                     document.getElementById('cm').style.border = '';
+                    document.getElementById('kg').value = '';
                     den.classList.toggle('topinp');
                 } else {
                     document.getElementById('cm').value = document.getElementById('cm').value + car.getAttribute('id');
@@ -213,6 +214,7 @@ numkeys.forEach(function(car){
                 } else if(car.classList.contains('change')){
                     document.getElementById('cm').style.border = 'black solid 2px';
                     document.getElementById('kg').style.border = '';
+                    document.getElementById('cm').value = '';
                     den.classList.toggle('topinp');
                 } else {
                     document.getElementById('kg').value = document.getElementById('kg').value + car.getAttribute('id');
