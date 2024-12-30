@@ -25,6 +25,7 @@ tops.forEach(function(car){
             });
             document.getElementById('long_button').style.background = '#7a7a7a';
             document.getElementById('long_button').style.top = '0px';
+            document.getElementById('base').innerHTML = 'm';
         } else if (car.getAttribute('id') == 'heavy_button'){
             now = 'heavy';
             dis.forEach(function(dar){
@@ -44,6 +45,7 @@ tops.forEach(function(car){
             });
             document.getElementById('heavy_button').style.background = '#7a7a7a';
             document.getElementById('heavy_button').style.top = '0px';
+            document.getElementById('base').innerHTML = 'g';
         } else if (car.getAttribute('id') == 'erea_button'){
             now = 'erea';
             dis.forEach(function(dar){
@@ -63,6 +65,7 @@ tops.forEach(function(car){
             });
             document.getElementById('erea_button').style.background = '#7a7a7a';
             document.getElementById('erea_button').style.top = '0px';
+            document.getElementById('base').innerHTML = 'm²';
         } else if (car.getAttribute('id') == 'volume_button'){
             now = 'volume';
             dis.forEach(function(dar){
@@ -81,7 +84,8 @@ tops.forEach(function(car){
                 dar.style.top = '-5px';
             });
             document.getElementById('volume_button').style.background = '#7a7a7a';
-            document.getElementById('volume_button').style.top = '0px';
+            document.getElementById('volume_button').style.top = '0px³';
+            document.getElementById('base').innerHTML = 'm³';
         }
         //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         document.getElementById('bfc').innerHTML = '単位：下から選択';
