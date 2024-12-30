@@ -2,12 +2,18 @@
 let tops = document.querySelectorAll('.top');
 let z = 1;
 var now = 'long';
+let dis = document.querySelectorAll('#unit_box>div');
 tops.forEach(function(car){
     car.addEventListener('click',function(){
         z = z + 1;
         if(car.getAttribute('id') == 'long_button'){
             now = 'long';
-            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('long_box').classList.toggle('open');
             dis.forEach(function(dar){
                 dar.style.display = 'none';
             });
@@ -21,7 +27,12 @@ tops.forEach(function(car){
             document.getElementById('long_button').style.top = '0px';
         } else if (car.getAttribute('id') == 'heavy_button'){
             now = 'heavy';
-            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('heavy_box').classList.toggle('open');
             dis.forEach(function(dar){
                 dar.style.display = 'none';
             });
@@ -35,7 +46,12 @@ tops.forEach(function(car){
             document.getElementById('heavy_button').style.top = '0px';
         } else if (car.getAttribute('id') == 'erea_button'){
             now = 'erea';
-            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('erea_box').classList.toggle('open');
             dis.forEach(function(dar){
                 dar.style.display = 'none';
             });
@@ -49,7 +65,12 @@ tops.forEach(function(car){
             document.getElementById('erea_button').style.top = '0px';
         } else if (car.getAttribute('id') == 'volume_button'){
             now = 'volume';
-            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('volume_box').classList.toggle('open');
             dis.forEach(function(dar){
                 dar.style.display = 'none';
             });
@@ -134,24 +155,30 @@ unit_order_button.addEventListener('click',function(){
     if(unit_order_button.classList.contains('asc') == false){
         unit_order_button.classList.toggle('asc');
         units_asc.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     } else if (unit_order_button.classList.contains('asc') && unit_order_button.classList.contains('des') == false){
         unit_order_button.classList.toggle('des');
         units_des.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     } else {
         unit_order_button.classList.toggle('asc');
         unit_order_button.classList.toggle('des');
         units.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     };
 });
@@ -178,24 +205,30 @@ num_order_button.addEventListener('click',function(){
     if(num_order_button.classList.contains('asc') == false){
         num_order_button.classList.toggle('asc');
         nums_asc.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     } else if (num_order_button.classList.contains('asc') && num_order_button.classList.contains('des') == false){
         num_order_button.classList.toggle('des');
         nums_des.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     } else {
         num_order_button.classList.toggle('asc');
         num_order_button.classList.toggle('des');
         nums.forEach(function(car){
-            car.forEach(function(dar){
-                dar.parentElement.parentElement.appendChild(dar.parentElement);
-            });
+            if(car[0].parentElement.parentElement.classList.contains('open')){
+                car.forEach(function(dar){
+                    dar.parentElement.parentElement.appendChild(dar.parentElement);
+                });
+            };
         });
     };
 });

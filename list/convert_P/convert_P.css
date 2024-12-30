@@ -138,7 +138,7 @@ h2{
             display: none;
             top: 0;
             height: 400px;
-            overflow: scroll;
+            overflow: auto;
             width: 100%;
             background-color: white;
             border: black solid 1px;
