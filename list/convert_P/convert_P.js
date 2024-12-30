@@ -1,82 +1,66 @@
 //単位群の選択
 let tops = document.querySelectorAll('.top');
 let z = 1;
-var now = 'a';
+var now = 'long';
 tops.forEach(function(car){
     car.addEventListener('click',function(){
         z = z + 1;
-        if(car.classList.contains('aaa')){
-            now = 'a';
-            document.getElementById('aaabox').style.zIndex = z;
-            document.getElementById('aaabox').style.display = 'block';
-            document.getElementById('bbbbox').style.display = 'none';
-            document.getElementById('cccbox').style.display = 'none';
-            document.getElementById('dddbox').style.display = 'none';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.aaa').style.background = '#7a7a7a';
-            document.querySelector('.top.bbb').style.background = 'white';
-            document.querySelector('.top.ccc').style.background = 'white';
-            document.querySelector('.top.ddd').style.background = 'white';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.aaa').style.top = '0';
-            document.querySelector('.top.bbb').style.top = '-5px';
-            document.querySelector('.top.ccc').style.top = '-5px';
-            document.querySelector('.top.ddd').style.top = '-5px';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-        } else if (car.classList.contains('bbb')){
-            now = 'b';
-            document.getElementById('bbbbox').style.zIndex = z;
-            document.getElementById('bbbbox').style.display = 'block';
-            document.getElementById('aaabox').style.display = 'none';
-            document.getElementById('cccbox').style.display = 'none';
-            document.getElementById('dddbox').style.display = 'none';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.bbb').style.background = '#7a7a7a';
-            document.querySelector('.top.aaa').style.background = 'white';
-            document.querySelector('.top.ccc').style.background = 'white';
-            document.querySelector('.top.ddd').style.background = 'white';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.bbb').style.top = '0';
-            document.querySelector('.top.aaa').style.top = '-5px';
-            document.querySelector('.top.ccc').style.top = '-5px';
-            document.querySelector('.top.ddd').style.top = '-5px';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-        } else if (car.classList.contains('ccc')){
-            now = 'c';
-            document.getElementById('cccbox').style.zIndex = z;
-            document.getElementById('cccbox').style.display = 'block';
-            document.getElementById('aaabox').style.display = 'none';
-            document.getElementById('bbbbox').style.display = 'none';
-            document.getElementById('dddbox').style.display = 'none';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.ccc').style.background = '#7a7a7a';
-            document.querySelector('.top.aaa').style.background = 'white';
-            document.querySelector('.top.bbb').style.background = 'white';
-            document.querySelector('.top.ddd').style.background = 'white';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.ccc').style.top = '0';
-            document.querySelector('.top.aaa').style.top = '-5px';
-            document.querySelector('.top.bbb').style.top = '-5px';
-            document.querySelector('.top.ddd').style.top = '-5px';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-        } else if (car.classList.contains('ddd')){
-            now = 'd';
-            document.getElementById('dddbox').style.zIndex = z;
-            document.getElementById('dddbox').style.display = 'block';
-            document.getElementById('aaabox').style.display = 'none';
-            document.getElementById('bbbbox').style.display = 'none';
-            document.getElementById('cccbox').style.display = 'none';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.ddd').style.background = '#7a7a7a';
-            document.querySelector('.top.aaa').style.background = 'white';
-            document.querySelector('.top.bbb').style.background = 'white';
-            document.querySelector('.top.ccc').style.background = 'white';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-            document.querySelector('.top.ddd').style.top = '0';
-            document.querySelector('.top.aaa').style.top = '-5px';
-            document.querySelector('.top.bbb').style.top = '-5px';
-            document.querySelector('.top.ccc').style.top = '-5px';
-            //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        if(car.getAttribute('id') == 'long_button'){
+            now = 'long';
+            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('long_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('long_button').style.background = '#7a7a7a';
+            document.getElementById('long_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'heavy_button'){
+            now = 'heavy';
+            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('heavy_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('heavy_button').style.background = '#7a7a7a';
+            document.getElementById('heavy_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'erea_button'){
+            now = 'erea';
+            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('erea_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('erea_button').style.background = '#7a7a7a';
+            document.getElementById('erea_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'volume_button'){
+            now = 'volume';
+            let dis = document.getElementById('unit_box').querySelectorAll('#unit_box>div');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('volume_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('volume_button').style.background = '#7a7a7a';
+            document.getElementById('volume_button').style.top = '0px';
         }
         //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
         document.getElementById('bfc').innerHTML = '単位：下から選択';
@@ -86,8 +70,136 @@ tops.forEach(function(car){
         last = '';
         brate = '';
         arate = '';
+        if(before_unit !== ''){
+            before_unit.style.background = 'white';
+        };
+        if(after_unit !== ''){
+            after_unit.style.background = 'white';
+        };
     })
 })
+//詳細オープン
+let ac = document.querySelectorAll('#unit_box>div>div');
+ac.forEach(function(car){
+    car.addEventListener('click',function(e){
+        if(e.target.classList.contains('before') == false && e.target.classList.contains('after') == false && e.target.classList.contains('definition') == false){
+            if(car.classList.contains('open') == false){
+                car.classList.toggle('open');
+                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
+                setTimeout(() => {
+                    car.querySelector('div').style.height = 'auto';
+                }, 300);
+            } else {
+                car.classList.toggle('open');
+                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
+                setTimeout(() => {
+                    car.querySelector('div').style.height = '';
+                }, 1);
+            }
+        }
+    })
+})
+//文字並べ替え
+var units = [document.querySelectorAll('#long_box>div>span:nth-of-type(1)'),document.querySelectorAll('#heavy_box>div>span:nth-of-type(1)'),document.querySelectorAll('#erea_box>div>span:nth-of-type(1)'),document.querySelectorAll('#volume_box>div>span:nth-of-type(1)')];
+var units_asc = [];
+var units_des = [];
+units.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        if(a.innerHTML > b.innerHTML){
+            return 1;
+        } else if (a.innerHTML < b.innerHTML){
+            return -1;
+        } else {
+            return 0;
+        };
+    });
+    units_asc.push(hairetu);
+});
+units.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        if(a.innerHTML > b.innerHTML){
+            return -1;
+        } else if (a.innerHTML < b.innerHTML){
+            return 1;
+        } else {
+            return 0;
+        };
+    });
+    units_des.push(hairetu);
+});
+let unit_order_button = document.getElementById('unit_order');
+unit_order_button.addEventListener('click',function(){
+    if(unit_order_button.classList.contains('asc') == false){
+        unit_order_button.classList.toggle('asc');
+        units_asc.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    } else if (unit_order_button.classList.contains('asc') && unit_order_button.classList.contains('des') == false){
+        unit_order_button.classList.toggle('des');
+        units_des.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    } else {
+        unit_order_button.classList.toggle('asc');
+        unit_order_button.classList.toggle('des');
+        units.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    };
+});
+//数字並び替え
+var nums = [document.querySelectorAll('#long_box>div>span:nth-of-type(2)'),document.querySelectorAll('#heavy_box>div>span:nth-of-type(2)'),document.querySelectorAll('#erea_box>div>span:nth-of-type(2)'),document.querySelectorAll('#volume_box>div>span:nth-of-type(2)')];
+var nums_asc = [];
+var nums_des = [];
+nums.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        return Number(a.innerHTML) - Number(b.innerHTML);
+    });
+    nums_asc.push(hairetu);
+});
+nums.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        return Number(b.innerHTML) - Number(a.innerHTML);
+    });
+    nums_des.push(hairetu);
+})
+let num_order_button = document.getElementById('num_order');
+num_order_button.addEventListener('click',function(){
+    if(num_order_button.classList.contains('asc') == false){
+        num_order_button.classList.toggle('asc');
+        nums_asc.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    } else if (num_order_button.classList.contains('asc') && num_order_button.classList.contains('des') == false){
+        num_order_button.classList.toggle('des');
+        nums_des.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    } else {
+        num_order_button.classList.toggle('asc');
+        num_order_button.classList.toggle('des');
+        nums.forEach(function(car){
+            car.forEach(function(dar){
+                dar.parentElement.parentElement.appendChild(dar.parentElement);
+            });
+        });
+    };
+});
+
 
 //各単位の基準単位に対する割合
 var num1 = '';
@@ -96,7 +208,7 @@ var num3 = '';
 function list(un){
     let abrate = ''
     //長さ
-    if(now == 'a'){
+    if(now == 'long'){
         if(un == 'nm'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μm'){
@@ -141,17 +253,17 @@ function list(un){
             num1 = new Decimal('129600');
             num2 = new Decimal('33');
             abrate = num1.div(num2);
-        } else if (un == 'インチ'){
+        } else if (un == 'inch'){
             abrate = new Decimal('0.0254');
-        } else if (un == 'フィート'){
+        } else if (un == 'feet'){
             abrate = new Decimal('0.3048');
-        } else if (un == 'ヤード'){
+        } else if (un == 'yard'){
             abrate = new Decimal('0.9144');
-        } else if (un == 'チェーン'){
+        } else if (un == 'chain'){
             abrate = new Decimal('20.1168');
-        } else if (un == 'ハロン'){
+        } else if (un == 'furlong'){
             abrate = new Decimal('201.168');
-        } else if (un == 'マイル'){
+        } else if (un == 'mile'){
             abrate = new Decimal('1609.344');
         } else if (un == '光秒'){
             abrate = new Decimal('299792458');
@@ -166,7 +278,7 @@ function list(un){
         }
     }
     //重さ
-    if(now == 'b'){
+    if(now == 'heavy'){
         if(un == 'ng'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μg'){
@@ -204,7 +316,7 @@ function list(un){
         }
     }
     //面積
-    if(now == 'c'){
+    if(now == 'erea'){
         if(un == 'n㎡'){
             abrate = new Decimal('0.000000000000000001');
         } else if (un == 'μ㎡'){
@@ -263,7 +375,7 @@ function list(un){
         }
     }
     //体積
-    if(now == 'd'){
+    if(now == 'volume'){
         if(un == 'n㎥'){
             abrate = new Decimal('0.000000000000000000000000001');
         } else if (un == 'μ㎥'){
@@ -322,16 +434,17 @@ function list(un){
     return abrate;
 }
 //変換前の選択
-let bu1 = document.querySelectorAll('#aaabef span');
-let bu2 = document.querySelectorAll('#bbbbef span');
-let bu3 = document.querySelectorAll('#cccbef span');
-let bu4 = document.querySelectorAll('#dddbef span');
-//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-let bunions = [...bu1,...bu2,...bu3,...bu4]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let bunions = document.querySelectorAll('.before');
 var brate = '';
+var before_unit = '';
 bunions.forEach(function(car){
     car.addEventListener('click',function(){
-        let un = car.innerText; 
+        let un = car.parentElement.querySelector('span').innerText;
+        if(before_unit !== ''){
+            before_unit.style.background = '';
+        };
+        before_unit = car;
+        before_unit.style.background = '#0000006c';
         document.getElementById('bfc').innerHTML = un;
         brate = list(un);
         rat(brate,arate);
@@ -339,16 +452,17 @@ bunions.forEach(function(car){
     });
 });
 //変換後の選択
-let au1 = document.querySelectorAll('#aaaaft span');
-let au2 = document.querySelectorAll('#bbbaft span');
-let au3 = document.querySelectorAll('#cccaft span');
-let au4 = document.querySelectorAll('#dddaft span');
-//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-let aunions = [...au1,...au2,...au3,...au4]//要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+let aunions = document.querySelectorAll('.after');
 var arate = '';
+var after_unit = '';
 aunions.forEach(function(car){
     car.addEventListener('click',function(){
-        let un = car.innerText; 
+        let un = car.parentElement.querySelector('span').innerText;
+        if(after_unit !== ''){
+            after_unit.style.background = '';
+        };
+        after_unit = car;
+        after_unit.style.background = '#0000006c';
         document.getElementById('afc').innerHTML = un;
         arate = list(un);
         rat(brate,arate);

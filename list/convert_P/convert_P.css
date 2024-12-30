@@ -1,0 +1,196 @@
+@charset "utf-8";
+h2{
+    margin: 10px 0px 0px 20px;
+}
+/*上部*/
+#top{
+    position: relative;
+    width: 90%;
+    margin: 5px 20px 20px 20px;
+    background-color: white;
+    border: black solid 2px;
+    z-index: calc(infinity);
+    &>div{
+        padding: 10px;
+        & input{
+            float: left;
+            width: 220px;
+            margin: -2px 3px 0px 0px;
+            text-align: right;
+        }
+        & div:has(#result){
+            font-size: 120%;
+            padding: 15px 0px 0px 0px;
+            & #result{
+                display: inline-block;
+                height: auto;
+                width: auto;
+                margin: 0px 4px -4px 0px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/*単位選択欄*/
+#bot{
+    position: relative;
+    width: 90%;
+    margin-left: 20px;
+    & #top_box{
+        position: relative;
+        height: 25px;
+        & .top{
+            position: absolute;
+            height: 30px;
+            width: 50px;
+            border: black solid 1px;
+            background-color: white;
+            border-radius: 5px 5px 0px 0px;
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+            }
+            & div{
+                border-bottom: black solid 1px;
+                border-radius: 5px;
+            }
+            &#long_button{
+                background-color: #7a7a7a;
+            }
+            &#heavy_button{
+                top: -5px;
+                left: 52px;
+            }
+            &#erea_button{
+                top: -5px;
+                left: 104px;
+            }
+            &#volume_button{
+                top: -5px;
+                left: 156px;
+            }
+            /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+        }
+    }
+    & #order{
+        position: relative;
+        width: 100%;
+        background-color: white;
+        border: black solid 1px;
+        z-index: calc(infinity);
+        &>div{
+            & span{
+                display: inline-block;
+                &:nth-of-type(1){
+                    position: relative;
+                    width: 30%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    & span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                &:nth-of-type(2){
+                    position: relative;
+                    width: 50%;
+                    & div:nth-of-type(1){
+                        display: inline-block;
+                        background: linear-gradient(to bottom, transparent 60%, rgba(255, 0, 0, 0.411) 70%, transparent 90%);
+                    }
+                    & div:nth-of-type(2){
+                        display: inline-block;
+                        background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 255, 0.411) 70%, transparent 90%);
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    & span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                &:nth-of-type(3){
+                    width: 10%;
+                    text-align: center;
+                }
+                &:nth-of-type(4){
+                    width: 10%;
+                    text-align: center;
+                }
+            }
+        } 
+    }
+    & #unit_box{
+        position: relative;
+        &>div{
+            position: absolute;
+            display: none;
+            top: 0;
+            height: 400px;
+            overflow: scroll;
+            width: 100%;
+            background-color: white;
+            border: black solid 1px;
+            z-index: calc(infinity);
+            &#long_box{
+                display: block;
+            }
+            &>div{
+                position: relative;
+                border-bottom: black solid 1px;
+                & span{
+                    display: inline-block;
+                    &:nth-of-type(1){
+                        width: 30%;
+                    }
+                    &:nth-of-type(2){
+                        display: inline;
+                        width: 50%;
+                        background: linear-gradient(to bottom, transparent 60%, rgba(255, 0, 0, 0.411) 70%, transparent 90%);
+                        &.about{
+                            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 255, 0.411) 70%, transparent 90%);
+                        }
+                    }
+                    &:nth-of-type(3){
+                        position: absolute;
+                        right: 10%;
+                        width: 10%;
+                        text-align: center;
+                        border-radius: 5px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    &:nth-of-type(4){
+                        position: absolute;
+                        right: 0;
+                        width: 10%;
+                        text-align: center;
+                        border-radius: 5px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                & div{
+                    height: 0px;
+                    background-color: rgb(207, 207, 207);
+                    overflow: hidden;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
+}
+
