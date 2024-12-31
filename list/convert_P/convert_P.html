@@ -21,9 +21,9 @@
       <h2>単位変換</h2>
       <div id="top">
          <div>
-            <input><span id="bfc">単位</span>
+            <input><span id="bfc">▷単位</span>
             <div>⇩<span id="rate"></span></div>
-            <div><span id="result"></span><span id="afc">単位</span></div>
+            <div><span id="result"></span><span id="afc"></span></div>
          </div>
       </div>
       <div id="bot">
@@ -33,244 +33,512 @@
             <div id="erea_button" class="top"><div>面積</div></div>
             <div id="volume_button" class="top"><div>体積</div></div>
          </div>
-         <div id="order">
-            <div><span id="unit_order">⇅単位<span></span></span><span id="num_order">⇅<span id="base">m</span>換算 ( <div>正確に</div> / <div>約</div> )<span></span></span><span>前</span><span>後</span></div>
-         </div>
          <div id="unit_box">
             <div id="long_box" class="open">
-               <div><span>nm</span><span>1e-9</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：国際単位系（SI）<br>
-                     名称：ナノメートル（nanometre）<br>
-                     定義：10⁻⁹m
+               <div class="orderNconvert">
+                  <select class="order">
+                     <option value="1">単位系順</option>
+                     <option value="2">名前（昇順）</option>
+                     <option value="3">名前（降順）</option>
+                     <option value="4">数値（昇順）</option>
+                     <option value="5">数値（降順）</option>
+                  </select>
+                  <div>
+                     <select class="convert_ALL">
+                        <option>nm</option>
+                        <option>μm</option>
+                        <option>mm</option>
+                        <option>cm</option>
+                        <option selected>m</option>
+                        <option>km</option>
+                        <option>厘</option>
+                        <option>分</option>
+                        <option>寸</option>
+                        <option>尺</option>
+                        <option>間</option>
+                        <option>丈</option>
+                        <option>furlong</option>
+                     </select>
+                     <select class="ABorBA">
+                        <option value="1">換算</option>
+                        <option value="2">あたり</option>
+                     </select>
                   </div>
                </div>
-               <div><span>μm</span><span>1e-6</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+               <div>
+                  <div><span>nm</span><span>1e-9</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：国際単位系（SI）<br>
+                        名称：ナノメートル（nanometre）<br>
+                        定義：10⁻⁹m
+                     </div>
                   </div>
-               </div>
-               <div><span>mm</span><span>1e-3</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>μm</span><span>1e-6</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>cm</span><span>1e-2</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>mm</span><span>1e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>m</span><span>1</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>cm</span><span>1e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>km</span><span>1e+3</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>m</span><span>1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>厘</span><span class="about">3.0303e-4</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：尺貫法<br>
-                     名称：厘（りん）<br>
-                     定義：1/10分（＝1/3300m）<br>
-                     指数なし<div>111111111111111111111111111111111111111111111111111111111111</div>
+                  <div><span>km</span><span>1e+3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>分</span><span class="about">3.0303e-3</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：尺貫法<br>
-                     名称：分（ぶ）<br>
-                     定義：1/10寸（＝1/330m）
+                  <div><span>厘</span><span class="about">3.0303e-4</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：厘（りん）<br>
+                        定義：1/10分（＝1/3300m）<br>
+                        指数なし<div>111111111111111111111111111111111111111111111111111111111111</div>
+                     </div>
                   </div>
-               </div>
-               <div><span>寸</span><span class="about">3.0303e-2</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：尺貫法<br>
-                     名称：寸（すん）<br>
-                     定義：1/10尺（＝1/33m）
+                  <div><span>分</span><span class="about">3.0303e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：分（ぶ）<br>
+                        定義：1/10寸（＝1/330m）
+                     </div>
                   </div>
-               </div>
-               <div><span>尺</span><span class="about">3.0303e-1</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：尺貫法<br>
-                     名称：尺（しゃく）<br>
-                     定義：10/33m
+                  <div><span>寸</span><span class="about">3.0303e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：寸（すん）<br>
+                        定義：1/10尺（＝1/33m）
+                     </div>
                   </div>
-               </div>
-               <div><span>間</span><span class="about">1.8182</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>尺</span><span class="about">3.0303e-1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：尺（しゃく）<br>
+                        定義：10/33m
+                     </div>
                   </div>
-               </div>
-               <div><span>丈</span><span class="about">3.0303</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>間</span><span class="about">1.8182</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>町</span><span class="about">109.0909</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>丈</span><span class="about">3.0303</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>里</span><span class="about">3927.2727</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>町</span><span class="about">109.0909</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>inch</span><span>0.0254</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>里</span><span class="about">3927.2727</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>feet</span><span>0.3048</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>inch</span><span>0.0254</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>yard</span><span>0.9144</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>feet</span><span>0.3048</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>chain</span><span>20.1168</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>yard</span><span>0.9144</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>furlong</span><span>201.168</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>chain</span><span>20.1168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>mile</span><span>1609.344</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>furlong</span><span>201.168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span></span><span></span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>mile</span><span>1609.344</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
                </div>
             </div>
             <div id="heavy_box">
-               <div><span>ng</span><span>0.000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+               <div class="orderNconvert">
+                  <select class="order">
+                     <option value="1">単位系順</option>
+                     <option value="2">名前（昇順）</option>
+                     <option value="3">名前（降順）</option>
+                     <option value="4">数値（昇順）</option>
+                     <option value="5">数値（降順）</option>
+                  </select>
+                  <span><span>正確に</span><span>およそ</span></span>
+                  <div>
+                     <select class="convert_ALL">
+                        <option>nm</option>
+                        <option>μm</option>
+                        <option>mm</option>
+                        <option>cm</option>
+                        <option selected>g</option>
+                        <option>km</option>
+                        <option>厘</option>
+                        <option>分</option>
+                        <option>寸</option>
+                        <option>尺</option>
+                        <option>間</option>
+                        <option>丈</option>
+                        <option></option>
+                     </select>
+                     <select class="ABorBA">
+                        <option value="1">換算</option>
+                        <option value="2">あたり</option>
+                     </select>
                   </div>
                </div>
-               <div><span>ng</span><span>0.000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+               <div>
+                  <div><span>mg</span><span>1e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>ng</span><span>0.0001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>g</span><span>1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
-               </div>
-               <div><span>ng</span><span>0.00000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span>ng</span><span>0.0000000000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span>ng</span><span>0.000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
-                  </div>
-               </div>
-               <div><span>ng</span><span>0.000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+                  <div><span>kg</span><span>1e+3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
                   </div>
                </div>
             </div>
             <div id="erea_box">
-               <div><span>nm</span><span>0.000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+               <div class="orderNconvert">
+                  <select class="order">
+                     <option value="1">単位系順</option>
+                     <option value="2">名前（昇順）</option>
+                     <option value="3">名前（降順）</option>
+                     <option value="4">数値（昇順）</option>
+                     <option value="5">数値（降順）</option>
+                  </select>
+                  <span><span>正確に</span><span>およそ</span></span>
+                  <div>
+                     <select class="convert_ALL">
+                        <option>nm</option>
+                        <option>μm</option>
+                        <option>mm</option>
+                        <option>cm</option>
+                        <option selected>m²</option>
+                        <option>km</option>
+                        <option>厘</option>
+                        <option>分</option>
+                        <option>寸</option>
+                        <option>尺</option>
+                        <option>間</option>
+                        <option>丈</option>
+                        <option></option>
+                     </select>
+                     <select class="ABorBA">
+                        <option value="1">換算</option>
+                        <option value="2">あたり</option>
+                     </select>
                   </div>
-                  
+               </div>
+               <div>
+                  <div><span>nm</span><span>1e-9</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：国際単位系（SI）<br>
+                        名称：ナノメートル（nanometre）<br>
+                        定義：10⁻⁹m
+                     </div>
+                  </div>
+                  <div><span>μm</span><span>1e-6</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>mm</span><span>1e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>cm</span><span>1e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>m</span><span>1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>km</span><span>1e+3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>厘</span><span class="about">3.0303e-4</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：厘（りん）<br>
+                        定義：1/10分（＝1/3300m）<br>
+                        指数なし<div>111111111111111111111111111111111111111111111111111111111111</div>
+                     </div>
+                  </div>
+                  <div><span>分</span><span class="about">3.0303e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：分（ぶ）<br>
+                        定義：1/10寸（＝1/330m）
+                     </div>
+                  </div>
+                  <div><span>寸</span><span class="about">3.0303e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：寸（すん）<br>
+                        定義：1/10尺（＝1/33m）
+                     </div>
+                  </div>
+                  <div><span>尺</span><span class="about">3.0303e-1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：尺（しゃく）<br>
+                        定義：10/33m
+                     </div>
+                  </div>
+                  <div><span>間</span><span class="about">1.8182</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>丈</span><span class="about">3.0303</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>町</span><span class="about">109.0909</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>里</span><span class="about">3927.2727</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>inch</span><span>0.0254</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>feet</span><span>0.3048</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>yard</span><span>0.9144</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>chain</span><span>20.1168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>furlong</span><span>201.168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>mile</span><span>1609.344</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span></span><span></span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span></span><span></span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
                </div>
             </div>
             <div id="volume_box">
-               <div><span>nm</span><span>0.000000001</span><span class="before">◁</span><span class="after">▷</span>
-                  <div class="definition">
-                     単位系：
+               <div class="orderNconvert">
+                  <select class="order">
+                     <option value="1">単位系順</option>
+                     <option value="2">名前（昇順）</option>
+                     <option value="3">名前（降順）</option>
+                     <option value="4">数値（昇順）</option>
+                     <option value="5">数値（降順）</option>
+                  </select>
+                  <span><span>正確に</span><span>およそ</span></span>
+                  <div>
+                     <select class="convert_ALL">
+                        <option>nm</option>
+                        <option>μm</option>
+                        <option>mm</option>
+                        <option>cm</option>
+                        <option selected>m³</option>
+                        <option>km</option>
+                        <option>厘</option>
+                        <option>分</option>
+                        <option>寸</option>
+                        <option>尺</option>
+                        <option>間</option>
+                        <option>丈</option>
+                        <option></option>
+                     </select>
+                     <select class="ABorBA">
+                        <option value="1">換算</option>
+                        <option value="2">あたり</option>
+                     </select>
                   </div>
-                  
+               </div>
+               <div>
+                  <div><span>nm</span><span>1e-9</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：国際単位系（SI）<br>
+                        名称：ナノメートル（nanometre）<br>
+                        定義：10⁻⁹m
+                     </div>
+                  </div>
+                  <div><span>μm</span><span>1e-6</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>mm</span><span>1e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>cm</span><span>1e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>m</span><span>1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>km</span><span>1e+3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>厘</span><span class="about">3.0303e-4</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：厘（りん）<br>
+                        定義：1/10分（＝1/3300m）<br>
+                        指数なし<div>111111111111111111111111111111111111111111111111111111111111</div>
+                     </div>
+                  </div>
+                  <div><span>分</span><span class="about">3.0303e-3</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：分（ぶ）<br>
+                        定義：1/10寸（＝1/330m）
+                     </div>
+                  </div>
+                  <div><span>寸</span><span class="about">3.0303e-2</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：寸（すん）<br>
+                        定義：1/10尺（＝1/33m）
+                     </div>
+                  </div>
+                  <div><span>尺</span><span class="about">3.0303e-1</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：尺貫法<br>
+                        名称：尺（しゃく）<br>
+                        定義：10/33m
+                     </div>
+                  </div>
+                  <div><span>間</span><span class="about">1.8182</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>丈</span><span class="about">3.0303</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>町</span><span class="about">109.0909</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>里</span><span class="about">3927.2727</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>inch</span><span>0.0254</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>feet</span><span>0.3048</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>yard</span><span>0.9144</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>chain</span><span>20.1168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>furlong</span><span>201.168</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span>mile</span><span>1609.344</span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span></span><span></span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
+                  <div><span></span><span></span><span></span><span class="go">▷</span>
+                     <div class="definition">
+                        単位系：
+                     </div>
+                  </div>
                </div>
             </div>
          </div>

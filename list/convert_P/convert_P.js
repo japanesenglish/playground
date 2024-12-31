@@ -1,243 +1,3 @@
-//単位群の選択
-let tops = document.querySelectorAll('.top');
-let z = 1;
-var now = 'long';
-let dis = document.querySelectorAll('#unit_box>div');
-tops.forEach(function(car){
-    car.addEventListener('click',function(){
-        z = z + 1;
-        if(car.getAttribute('id') == 'long_button'){
-            now = 'long';
-            dis.forEach(function(dar){
-                if(dar.classList.contains('open')){
-                    dar.classList.toggle('open');
-                };
-            });
-            document.getElementById('long_box').classList.toggle('open');
-            dis.forEach(function(dar){
-                dar.style.display = 'none';
-            });
-            document.getElementById('long_box').style.display = 'block';
-            let white = document.querySelectorAll('.top');
-            white.forEach(function(dar){
-                dar.style.background = 'white';
-                dar.style.top = '-5px';
-            });
-            document.getElementById('long_button').style.background = '#7a7a7a';
-            document.getElementById('long_button').style.top = '0px';
-            document.getElementById('base').innerHTML = 'm';
-        } else if (car.getAttribute('id') == 'heavy_button'){
-            now = 'heavy';
-            dis.forEach(function(dar){
-                if(dar.classList.contains('open')){
-                    dar.classList.toggle('open');
-                };
-            });
-            document.getElementById('heavy_box').classList.toggle('open');
-            dis.forEach(function(dar){
-                dar.style.display = 'none';
-            });
-            document.getElementById('heavy_box').style.display = 'block';
-            let white = document.querySelectorAll('.top');
-            white.forEach(function(dar){
-                dar.style.background = 'white';
-                dar.style.top = '-5px';
-            });
-            document.getElementById('heavy_button').style.background = '#7a7a7a';
-            document.getElementById('heavy_button').style.top = '0px';
-            document.getElementById('base').innerHTML = 'g';
-        } else if (car.getAttribute('id') == 'erea_button'){
-            now = 'erea';
-            dis.forEach(function(dar){
-                if(dar.classList.contains('open')){
-                    dar.classList.toggle('open');
-                };
-            });
-            document.getElementById('erea_box').classList.toggle('open');
-            dis.forEach(function(dar){
-                dar.style.display = 'none';
-            });
-            document.getElementById('erea_box').style.display = 'block';
-            let white = document.querySelectorAll('.top');
-            white.forEach(function(dar){
-                dar.style.background = 'white';
-                dar.style.top = '-5px';
-            });
-            document.getElementById('erea_button').style.background = '#7a7a7a';
-            document.getElementById('erea_button').style.top = '0px';
-            document.getElementById('base').innerHTML = 'm²';
-        } else if (car.getAttribute('id') == 'volume_button'){
-            now = 'volume';
-            dis.forEach(function(dar){
-                if(dar.classList.contains('open')){
-                    dar.classList.toggle('open');
-                };
-            });
-            document.getElementById('volume_box').classList.toggle('open');
-            dis.forEach(function(dar){
-                dar.style.display = 'none';
-            });
-            document.getElementById('volume_box').style.display = 'block';
-            let white = document.querySelectorAll('.top');
-            white.forEach(function(dar){
-                dar.style.background = 'white';
-                dar.style.top = '-5px';
-            });
-            document.getElementById('volume_button').style.background = '#7a7a7a';
-            document.getElementById('volume_button').style.top = '0px³';
-            document.getElementById('base').innerHTML = 'm³';
-        }
-        //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
-        document.getElementById('bfc').innerHTML = '単位：下から選択';
-        document.getElementById('afc').innerHTML = '単位：下から選択';
-        document.getElementById('rate').innerHTML = '';
-        document.getElementById('result').innerHTML = '';
-        last = '';
-        brate = '';
-        arate = '';
-        if(before_unit !== ''){
-            before_unit.style.background = 'white';
-        };
-        if(after_unit !== ''){
-            after_unit.style.background = 'white';
-        };
-    })
-})
-//詳細オープン
-let ac = document.querySelectorAll('#unit_box>div>div');
-ac.forEach(function(car){
-    car.addEventListener('click',function(e){
-        if(e.target.classList.contains('before') == false && e.target.classList.contains('after') == false && e.target.classList.contains('definition') == false){
-            if(car.classList.contains('open') == false){
-                car.classList.toggle('open');
-                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
-                setTimeout(() => {
-                    car.querySelector('div').style.height = 'auto';
-                }, 300);
-            } else {
-                car.classList.toggle('open');
-                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
-                setTimeout(() => {
-                    car.querySelector('div').style.height = '';
-                }, 1);
-            }
-        }
-    })
-})
-//文字並べ替え
-var units = [document.querySelectorAll('#long_box>div>span:nth-of-type(1)'),document.querySelectorAll('#heavy_box>div>span:nth-of-type(1)'),document.querySelectorAll('#erea_box>div>span:nth-of-type(1)'),document.querySelectorAll('#volume_box>div>span:nth-of-type(1)')];
-var units_asc = [];
-var units_des = [];
-units.forEach(function(car){
-    let hairetu = [...car];
-    hairetu.sort((a,b)=>{
-        if(a.innerHTML > b.innerHTML){
-            return 1;
-        } else if (a.innerHTML < b.innerHTML){
-            return -1;
-        } else {
-            return 0;
-        };
-    });
-    units_asc.push(hairetu);
-});
-units.forEach(function(car){
-    let hairetu = [...car];
-    hairetu.sort((a,b)=>{
-        if(a.innerHTML > b.innerHTML){
-            return -1;
-        } else if (a.innerHTML < b.innerHTML){
-            return 1;
-        } else {
-            return 0;
-        };
-    });
-    units_des.push(hairetu);
-});
-let unit_order_button = document.getElementById('unit_order');
-unit_order_button.addEventListener('click',function(){
-    if(unit_order_button.classList.contains('asc') == false){
-        unit_order_button.classList.toggle('asc');
-        units_asc.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    } else if (unit_order_button.classList.contains('asc') && unit_order_button.classList.contains('des') == false){
-        unit_order_button.classList.toggle('des');
-        units_des.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    } else {
-        unit_order_button.classList.toggle('asc');
-        unit_order_button.classList.toggle('des');
-        units.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    };
-});
-//数字並び替え
-var nums = [document.querySelectorAll('#long_box>div>span:nth-of-type(2)'),document.querySelectorAll('#heavy_box>div>span:nth-of-type(2)'),document.querySelectorAll('#erea_box>div>span:nth-of-type(2)'),document.querySelectorAll('#volume_box>div>span:nth-of-type(2)')];
-var nums_asc = [];
-var nums_des = [];
-nums.forEach(function(car){
-    let hairetu = [...car];
-    hairetu.sort((a,b)=>{
-        return Number(a.innerHTML) - Number(b.innerHTML);
-    });
-    nums_asc.push(hairetu);
-});
-nums.forEach(function(car){
-    let hairetu = [...car];
-    hairetu.sort((a,b)=>{
-        return Number(b.innerHTML) - Number(a.innerHTML);
-    });
-    nums_des.push(hairetu);
-})
-let num_order_button = document.getElementById('num_order');
-num_order_button.addEventListener('click',function(){
-    if(num_order_button.classList.contains('asc') == false){
-        num_order_button.classList.toggle('asc');
-        nums_asc.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    } else if (num_order_button.classList.contains('asc') && num_order_button.classList.contains('des') == false){
-        num_order_button.classList.toggle('des');
-        nums_des.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    } else {
-        num_order_button.classList.toggle('asc');
-        num_order_button.classList.toggle('des');
-        nums.forEach(function(car){
-            if(car[0].parentElement.parentElement.classList.contains('open')){
-                car.forEach(function(dar){
-                    dar.parentElement.parentElement.appendChild(dar.parentElement);
-                });
-            };
-        });
-    };
-});
-
-
 //各単位の基準単位に対する割合
 var num1 = '';
 var num2 = '';
@@ -245,7 +5,7 @@ var num3 = '';
 function list(un){
     let abrate = ''
     //長さ
-    if(now == 'long'){
+    if(now == 0){
         if(un == 'nm'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μm'){
@@ -315,7 +75,7 @@ function list(un){
         }
     }
     //重さ
-    if(now == 'heavy'){
+    if(now == 1){
         if(un == 'ng'){
             abrate = new Decimal('0.000000001');
         } else if (un == 'μg'){
@@ -353,7 +113,7 @@ function list(un){
         }
     }
     //面積
-    if(now == 'erea'){
+    if(now == 2){
         if(un == 'n㎡'){
             abrate = new Decimal('0.000000000000000001');
         } else if (un == 'μ㎡'){
@@ -412,7 +172,7 @@ function list(un){
         }
     }
     //体積
-    if(now == 'volume'){
+    if(now == 3){
         if(un == 'n㎥'){
             abrate = new Decimal('0.000000000000000000000000001');
         } else if (un == 'μ㎥'){
@@ -470,40 +230,82 @@ function list(un){
     //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
     return abrate;
 }
-//変換前の選択
-let bunions = document.querySelectorAll('.before');
+
+//単位選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+let changes = document.querySelectorAll('.ABorBA')
 var brate = '';
-var before_unit = '';
-bunions.forEach(function(car){
-    car.addEventListener('click',function(){
-        let un = car.parentElement.querySelector('span').innerText;
-        if(before_unit !== ''){
-            before_unit.style.background = '';
-        };
-        before_unit = car;
-        before_unit.style.background = '#0000006c';
-        document.getElementById('bfc').innerHTML = un;
-        brate = list(un);
-        rat(brate,arate);
-        cal();
-    });
-});
-//変換後の選択
-let aunions = document.querySelectorAll('.after');
 var arate = '';
-var after_unit = '';
-aunions.forEach(function(car){
-    car.addEventListener('click',function(){
-        let un = car.parentElement.querySelector('span').innerText;
-        if(after_unit !== ''){
-            after_unit.style.background = '';
+function cal_ALL(){
+    var un = unit_change[now].value;
+    var nu = '';
+    dis.forEach(function(car){
+        if(car.classList.contains('open')){
+            if(car.querySelector('.on') != null){
+                nu = car.querySelector('.on').parentElement.querySelector('span:nth-of-type(1)').innerHTML;
+                if(changes[now].value == 1){
+                    brate = list(nu);
+                    arate = list(un);
+                    document.getElementById('bfc').innerHTML = nu;
+                    document.getElementById('afc').innerHTML = un;
+                } else if (changes[now].value == 2){
+                    brate = list(un);
+                    arate = list(nu);
+                    document.getElementById('bfc').innerHTML = un;
+                    document.getElementById('afc').innerHTML = nu;
+                };
+                rat(brate,arate);
+                cal();
+            } else {
+                nu = '▷単位';
+                if(changes[now].value == 1){
+                    document.getElementById('bfc').innerHTML = nu;
+                    document.getElementById('afc').innerHTML = un;
+                } else if (changes[now].value == 2){
+                    document.getElementById('bfc').innerHTML = un;
+                    document.getElementById('afc').innerHTML = nu;
+                };
+            };
         };
-        after_unit = car;
-        after_unit.style.background = '#0000006c';
-        document.getElementById('afc').innerHTML = un;
-        arate = list(un);
-        rat(brate,arate);
-        cal();
+    });
+};
+//selectの選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var unit_change = document.querySelectorAll('.convert_ALL');
+function con(){
+    units[now].forEach(function(car){
+        if(changes[now].value == 1){
+            let num_rate = list(car.innerHTML).div(list(unit_change[now].value));
+            if(String(num_rate).split('.').length <= 4){
+
+            }
+            car.parentElement.querySelector('span:nth-of-type(2)').innerHTML = Number(num_rate).toExponential(4);
+        } else if (changes[now].value == 2){
+            let num_rate = list(unit_change[now].value).div(list(car.innerHTML));
+            car.parentElement.querySelector('span:nth-of-type(2)').innerHTML = Number(num_rate).toExponential(4);
+        };
+    });
+};
+function uniuni(){
+    units[now].forEach(function(car){
+        if(changes[now].value == 1){
+            car.parentElement.querySelector('span:nth-of-type(3)').innerHTML = '　' + unit_change[now].value;
+        } else if (changes[now].value == 2){
+            car.parentElement.querySelector('span:nth-of-type(3)').innerHTML = '　' + car.innerHTML;
+        }
+    })
+}
+//▷の選択
+let goes = document.querySelectorAll('.go');
+var pushed = [];
+goes.forEach(function(car){
+    car.addEventListener('click',function(){
+        if(pushed[now] != null){
+            pushed[now].style.background = '';
+            pushed[now].classList.toggle('on');
+        }
+        pushed[now] = car;
+        pushed[now].style.background = '#0000006c';
+        pushed[now].classList.toggle('on');
+        cal_ALL();
     })
 })
 //倍率計算
@@ -532,8 +334,7 @@ function rat(b,a){
 var inp = document.querySelector('input');
 let result = document.getElementById('result');
 function cal(){
-    inp = document.querySelector('input');
-    inp = String(inp.value).replaceAll(',','');
+    inp = String(document.querySelector('input').value).replaceAll(',','');
     if(rate !== ''){
         if(inp !== ''){
             dinp = new Decimal(inp);
@@ -564,15 +365,193 @@ function cal(){
         document.querySelector('input').value = inp;
     }
 }
-inp.addEventListener('keyup',function(){
-    cal();
+
+//単位群の選択
+let tops = document.querySelectorAll('.top');
+var now = 0;
+var dis = document.querySelectorAll('#unit_box>div');
+tops.forEach(function(car){
+    car.addEventListener('click',function(){
+        if(car.getAttribute('id') == 'long_button'){
+            now = 0;
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('long_box').classList.toggle('open');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('long_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('long_button').style.background = '#7a7a7a';
+            document.getElementById('long_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'heavy_button'){
+            now = 1;
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('heavy_box').classList.toggle('open');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('heavy_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('heavy_button').style.background = '#7a7a7a';
+            document.getElementById('heavy_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'erea_button'){
+            now = 2;
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('erea_box').classList.toggle('open');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('erea_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('erea_button').style.background = '#7a7a7a';
+            document.getElementById('erea_button').style.top = '0px';
+        } else if (car.getAttribute('id') == 'volume_button'){
+            now = 3;
+            dis.forEach(function(dar){
+                if(dar.classList.contains('open')){
+                    dar.classList.toggle('open');
+                };
+            });
+            document.getElementById('volume_box').classList.toggle('open');
+            dis.forEach(function(dar){
+                dar.style.display = 'none';
+            });
+            document.getElementById('volume_box').style.display = 'block';
+            let white = document.querySelectorAll('.top');
+            white.forEach(function(dar){
+                dar.style.background = 'white';
+                dar.style.top = '-5px';
+            });
+            document.getElementById('volume_button').style.background = '#7a7a7a';
+            document.getElementById('volume_button').style.top = '0px³';
+        }
+        //要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー//
+        document.getElementById('rate').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+        cal_ALL();
+        uniuni();
+    })
+})
+//文字（昇順・降順）ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var units = [document.querySelectorAll('#long_box>div:nth-of-type(2)>div>span:nth-of-type(1)'),document.querySelectorAll('#heavy_box>div:nth-of-type(2)>div>span:nth-of-type(1)'),document.querySelectorAll('#erea_box>div:nth-of-type(2)>div>span:nth-of-type(1)'),document.querySelectorAll('#volume_box>div:nth-of-type(2)>div>span:nth-of-type(1)')];
+var units_asc = [];
+var units_des = [];
+units.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        if(a.innerHTML > b.innerHTML){
+            return 1;
+        } else if (a.innerHTML < b.innerHTML){
+            return -1;
+        } else {
+            return 0;
+        };
+    });
+    units_asc.push(hairetu);
 });
-inp.addEventListener('change',function(){
-    cal();
+units.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        if(a.innerHTML > b.innerHTML){
+            return -1;
+        } else if (a.innerHTML < b.innerHTML){
+            return 1;
+        } else {
+            return 0;
+        };
+    });
+    units_des.push(hairetu);
 });
-inp.addEventListener('DOMFocusOut',function(){
-    cal();
+//数字（昇順・降順）ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var nums = [document.querySelectorAll('#long_box>div:nth-of-type(2)>div>span:nth-of-type(2)'),document.querySelectorAll('#heavy_box>div:nth-of-type(2)>div>span:nth-of-type(2)'),document.querySelectorAll('#erea_box>div:nth-of-type(2)>div>span:nth-of-type(2)'),document.querySelectorAll('#volume_box>div:nth-of-type(2)>div>span:nth-of-type(2)')];
+var nums_asc = [];
+var nums_des = [];
+nums.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        return Number(a.innerHTML) - Number(b.innerHTML);
+    });
+    nums_asc.push(hairetu);
 });
+nums.forEach(function(car){
+    let hairetu = [...car];
+    hairetu.sort((a,b)=>{
+        return Number(b.innerHTML) - Number(a.innerHTML);
+    });
+    nums_des.push(hairetu);
+})
+//並び替え
+let orders = document.querySelectorAll('.order');
+orders.forEach(function(car){
+    car.addEventListener('change',function(e){
+        if(e.target.value == 1){
+            units[now].forEach(function(car){
+                car.parentElement.parentElement.appendChild(car.parentElement);
+            });
+        } else if (e.target.value == 2){
+            units_asc[now].forEach(function(car){
+                car.parentElement.parentElement.appendChild(car.parentElement);
+            });
+        } else if (e.target.value == 3){
+            units_des[now].forEach(function(car){
+                car.parentElement.parentElement.appendChild(car.parentElement);
+            });
+        } else if (e.target.value == 4){
+            nums_asc[now].forEach(function(car){
+                car.parentElement.parentElement.appendChild(car.parentElement);
+            });
+        } else if (e.target.value == 5){
+            nums_des[now].forEach(function(car){
+                car.parentElement.parentElement.appendChild(car.parentElement);
+            });
+        };
+    });
+});
+//詳細オープン
+let ac = document.querySelectorAll('#unit_box>div>div:nth-of-type(2)>div');
+ac.forEach(function(car){
+    car.addEventListener('click',function(e){
+        if(e.target.classList.contains('go') == false && e.target.classList.contains('definition') == false){
+            if(car.classList.contains('open') == false){
+                car.classList.toggle('open');
+                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
+                setTimeout(() => {
+                    car.querySelector('div').style.height = 'auto';
+                }, 300);
+            } else {
+                car.classList.toggle('open');
+                car.querySelector('div').style.height = car.querySelector('div').scrollHeight + 'px';
+                setTimeout(() => {
+                    car.querySelector('div').style.height = '';
+                }, 1);
+            }
+        }
+    })
+})
 
 //電卓
 var den = document.getElementById('den');
@@ -613,3 +592,29 @@ document.getElementById('allclear').addEventListener('click',function(){
     document.querySelector('input').value = '';
     cal();
 })
+
+//function発動タイミング
+inp.addEventListener('keyup',function(){
+    cal();
+});
+inp.addEventListener('change',function(){
+    cal();
+});
+inp.addEventListener('DOMFocusOut',function(){
+    cal();
+});
+unit_change.forEach(function(car){
+    car.addEventListener('change',function(){
+        cal_ALL();
+        con();
+        uniuni();
+    });
+})
+changes.forEach(function(car){
+    car.addEventListener('change',function(){
+        cal_ALL();
+        con();
+        uniuni();
+    });
+});
+window.addEventListener('DOMContentLoaded',cal_ALL(),con(),uniuni());

@@ -9,12 +9,12 @@ h2{
     margin: 5px 20px 20px 20px;
     background-color: white;
     border: black solid 2px;
-    z-index: calc(infinity);
+    z-index: 2147483645;
     &>div{
         padding: 10px;
         & input{
             float: left;
-            width: 220px;
+            width: 60%;
             margin: -2px 3px 0px 0px;
             text-align: right;
         }
@@ -73,129 +73,74 @@ h2{
             /*要追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
         }
     }
-    & #order{
-        position: relative;
-        width: 100%;
-        background-color: white;
-        border: black solid 1px;
-        z-index: calc(infinity);
-        &>div{
-            & span{
-                display: inline-block;
-                &:nth-of-type(1){
-                    position: relative;
-                    width: 30%;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    &>span{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        display: inline-block;
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-                &:nth-of-type(2){
-                    position: relative;
-                    width: 50%;
-                    & div:nth-of-type(1){
-                        display: inline-block;
-                        background: linear-gradient(to bottom, transparent 70%, rgba(255, 0, 0, 0.411) 90%, transparent 90%);
-                    }
-                    & div:nth-of-type(2){
-                        display: inline-block;
-                        background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 255, 0.411) 90%, transparent 90%);
-                    }
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    &>span{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        display: inline-block;
-                        height: 100%;
-                        width: 100%;
-                        &#base{
-                            position: static;
-                            display: inline;
-                        }
-                    }
-                }
-                &:nth-of-type(3){
-                    width: 10%;
-                    text-align: center;
-                }
-                &:nth-of-type(4){
-                    width: 10%;
-                    text-align: center;
-                }
-            }
-        } 
-    }
     & #unit_box{
         position: relative;
         &>div{
-            position: absolute;
             display: none;
             top: 0;
-            height: 400px;
-            overflow: auto;
             width: 100%;
             background-color: white;
-            border: black solid 1px;
-            z-index: calc(infinity);
+            border: black solid 2px;
+            z-index: 2147483645;
             &#long_box{
                 display: block;
             }
-            &>div{
+            & .orderNconvert{
                 position: relative;
-                border-bottom: black solid 1px;
-                line-height: 25px;
-                & span{
+                width: 100%;
+                background-color: white;
+                border-bottom: black solid 2px;
+                z-index: 2147483645;
+                &>div{
+                    position: absolute;
                     display: inline-block;
-                    &:nth-of-type(1){
-                        width: 30%;
-                    }
-                    &:nth-of-type(2){
-                        display: inline;
-                        width: 50%;
-                        background: linear-gradient(to bottom, transparent 70%, rgba(255, 0, 0, 0.411) 90%, transparent 90%);
-                        &.about{
-                            background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 255, 0.411) 90%, transparent 90%);
-                        }
-                    }
-                    &:nth-of-type(3){
-                        position: absolute;
-                        right: 10%;
-                        width: 10%;
-                        text-align: center;
-                        border-radius: 5px;
-                        &:hover{
-                            cursor: pointer;
-                        }
-                    }
-                    &:nth-of-type(4){
-                        position: absolute;
-                        right: 0;
-                        width: 10%;
-                        text-align: center;
-                        border-radius: 5px;
-                        &:hover{
-                            cursor: pointer;
-                        }
+                    right: 60px;
+                    text-align: right;
+                    & .convert_ALL{
+                        text-align: right;
                     }
                 }
+            }
+            &>div:nth-of-type(2){
+                height: 350px;
+                overflow: auto;
                 &>div{
-                    height: 0px;
-                    background-color: rgb(221, 221, 221);
-                    overflow: hidden;
-                    transition: all 0.3s;
+                    position: relative;
+                    border-bottom: black solid 1px;
+                    line-height: 25px;
+                    &>span{
+                        display: inline-block;
+                        &:nth-of-type(1){
+                            width: 30%;
+                        }
+                        &:nth-of-type(2){
+                            display: inline-block;
+                            width: 30%;
+                            text-align: right;
+                        }
+                        &:nth-of-type(3){
+                            display: inline-block;
+                            width: 30%;
+                            text-align: left;
+                        }
+                        &:nth-of-type(4){
+                            width: 10%;
+                            text-align: center;
+                            border-radius: 5px;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
                     &>div{
-                        width: 100%;
-                        overflow: auto;
+                        height: 0px;
+                        background-color: rgb(221, 221, 221);
+                        overflow: hidden;
+                        transition: all 0.3s;
+                        &>div{
+                            width: 100%;
+                            overflow: auto;
+                        }
                     }
                 }
             }
